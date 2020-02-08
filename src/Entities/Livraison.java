@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Services;
+package Entities;
 
-import Entities.Colis;
 import java.util.Date;
 
 /**
