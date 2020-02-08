@@ -12,5 +12,5 @@ package IServices;
 public interface IReclamationService {
     public void AjouterReclamation ();
     public void SupprimerReclamation();
-    public void RechercherReclamation ();
+    public void RechercherReclamation ();  
 }
