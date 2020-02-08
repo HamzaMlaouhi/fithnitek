@@ -17,7 +17,7 @@ public class MyDB {
     
     String url = "jdbc:mysql://localhost/FiThnitek";
     String login = "root";
-    String pwd = "root";
+    String pwd = "";
     public static MyDB instance;
     public Connection connection;
     
