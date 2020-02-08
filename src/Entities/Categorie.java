@@ -9,7 +9,7 @@ package Entities;
  *
  * @author Wassim
  */
-class Categorie {
+public class Categorie {
     private int id ;    
     private String name ;
     private String description ;
