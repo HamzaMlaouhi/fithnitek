@@ -12,8 +12,13 @@ import java.util.Date;
  * @author Wassim
  */
 public class Personne extends Utilisateur {
+    
+    public enum Sexe{
+        HOMME,
+        FEMME
+    }
 
-    private Enum sexe;
+    private Sexe sexe;
     private String nom;
     private String prenom;
     private Byte image;
@@ -23,7 +28,7 @@ public class Personne extends Utilisateur {
     public Personne() {
     }
 
-    public Personne(Enum sexe, String nom, String prenom, Byte image, String cin, int num_tel, int id,
+    public Personne(Sexe sexe, String nom, String prenom, Byte image, String cin, int num_tel, int id,
             String username, String email, String password, Date last_login) {
         super(id, username, email, password, last_login);
         this.sexe = sexe;
@@ -58,7 +63,7 @@ public class Personne extends Utilisateur {
         return num_tel;
     }
 
-    public void setSexe(Enum sexe) {
+    public void setSexe(Sexe sexe) {
         this.sexe = sexe;
     }
 
@@ -81,5 +86,6 @@ public class Personne extends Utilisateur {
     public void setNum_tel(int num_tel) {
         this.num_tel = num_tel;
     }
-    
 }
+
+
