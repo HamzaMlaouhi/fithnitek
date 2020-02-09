@@ -14,9 +14,9 @@ import java.util.List;
  * @author abder
  */
 public interface IElementService {
-    public void AjouterElemnet(Categorie ca);
-   public void ModifierElement(Categorie ca);
-   public void SupprimerElement(Categorie ca);
+    public void AjouterElemnet(Element e);
+   public void ModifierElement(Element e);
+   public void SupprimerElement(Element e);
    public List<Element > AfficherElement();
     
 }
