@@ -23,7 +23,7 @@ public class Personne extends Utilisateur {
     public Personne() {
     }
 
-    public Personne(Enum sexe, String nom, String prenom, Byte image, String cin, int num_tel, int id,
+    public Personne(Enum sexe, String nom, String prenom, Byte image, String cin, int num_tel, int id, 
             String username, String email, String password, Date last_login) {
         super(id, username, email, password, last_login);
         this.sexe = sexe;
@@ -33,6 +33,8 @@ public class Personne extends Utilisateur {
         this.cin = cin;
         this.num_tel = num_tel;
     }
+
+   
 
     public Enum getSexe() {
         return sexe;
