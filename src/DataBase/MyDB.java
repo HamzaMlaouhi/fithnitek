@@ -8,6 +8,8 @@ package DataBase;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,11 +25,14 @@ public class MyDB {
     
     private MyDB(){
     try {
+        Class.forName("com.mysql.jdbc.Driver");
              connection=DriverManager.getConnection(url, login, pwd);
              System.out.println("connexion etablie");
          } catch (SQLException ex) {
              System.out.println(ex);
-         }
+         } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MyDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
 }
     
     public static MyDB getInstance(){
