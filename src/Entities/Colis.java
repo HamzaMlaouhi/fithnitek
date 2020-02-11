@@ -15,7 +15,7 @@ public class Colis {
     private int id;
     private String depart;
     private String destination ;
-    private Date date_limit ;       
+    private String date_limit ;       
     private String label ;       
     private String description ;       
     private Element[] elements ;
@@ -25,14 +25,14 @@ public class Colis {
         
     }
 
-    public Colis(int id, String depart, String destination, Date date_limit, String label, String description, Element[] elements, int idUtilisateur) {
+    public Colis(int id, String depart, String destination, String date_limit, String label, String description,  int idUtilisateur) {
         this.id = id;
         this.depart = depart;
         this.destination = destination;
         this.date_limit = date_limit;
         this.label = label;
         this.description = description;
-        this.elements = elements;
+      
         this.idUtilisateur = idUtilisateur;
     }
    
@@ -49,7 +49,7 @@ public class Colis {
         return destination;
     }
 
-    public Date getDate_limit() {
+    public String getDate_limit() {
         return date_limit;
     }
 
@@ -61,9 +61,6 @@ public class Colis {
         return description;
     }
 
-    public Element[] getElements() {
-        return elements;
-    }
 
     public int getIdUtilisateur() {
         return idUtilisateur;
@@ -81,7 +78,7 @@ public class Colis {
         this.destination = destination;
     }
 
-    public void setDate_limit(Date date_limit) {
+    public void setDate_limit(String date_limit) {
         this.date_limit = date_limit;
     }
 
@@ -93,9 +90,7 @@ public class Colis {
         this.description = description;
     }
 
-    public void setElements(Element[] elements) {
-        this.elements = elements;
-    }
+    
 
     public void setIdUtilisateur(int idUtilisateur) {
         this.idUtilisateur = idUtilisateur;
