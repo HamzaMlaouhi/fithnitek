@@ -58,6 +58,11 @@ public class Reclamation {
     public void setTypereclamation(String typereclamation) {
         this.typereclamation = typereclamation;
     }
+
+    @Override
+    public String toString(){
+        return "ID = "+id+" TYPE DE RECLAMATION = "+typereclamation+" MESSAGE = "+message+" ID UTILISATEUR = "+idutilisateur+"|\n";
+    }
     
 
     
