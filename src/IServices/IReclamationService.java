@@ -5,13 +5,18 @@
  */
 package IServices;
 
+import Entities.Reclamation;
+
+import java.util.List;
+
 /**
  *
  * @author HP
  */
 public interface IReclamationService {
-    public void AjouterReclamation ();
-    public void SupprimerReclamation ();
-    public void RechercherReclamation ();
+    public void ajouterReclamation (Reclamation r);
+    public void supprimerReclamation (Reclamation r);
+    public Reclamation rechercherReclamation (Reclamation r);
+    public List<Reclamation> displayReclamation();
     
 }
