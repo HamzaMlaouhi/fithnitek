@@ -17,7 +17,6 @@ public class ColisService implements IColisService{
 
     @Override
     public void AjouterColis(Colis c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

@@ -13,8 +13,8 @@ import java.util.List;
  * @author Wassim
  */
 public interface ICategorieService {
-   public void AjouterColis(Categorie ca);
-   public void ModifierColis(Categorie ca);
-   public void SupprimerColis(Categorie ca);
+   public void AjouterCategorie(Categorie ca);
+   public void ModifierCategorie(Categorie ca);
+   public void SupprimerCategorie(Categorie ca);
    public List<Categorie > AfficherCategorie();
 }
