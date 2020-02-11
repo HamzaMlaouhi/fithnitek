@@ -5,10 +5,8 @@
  */
 package fithnitek;
 
-import Entities.Categorie;
-import Entities.Utilisateur;
-import Services.CategorieService;
-import Services.UtilisateurService;
+import Entities.Element;
+import Services.ElementService;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -28,9 +26,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
-        Utilisateur U = new Utilisateur(3, "Mlaouhi", "MLaouhi@gmail.com", "tw aandy");
-        UtilisateurService US = new UtilisateurService();
-        US.SupprimerUtilisateur(U);
+       
        
     }
 
