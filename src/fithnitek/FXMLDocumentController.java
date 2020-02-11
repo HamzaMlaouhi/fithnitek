@@ -5,9 +5,6 @@
  */
 package fithnitek;
 
-import DataBase.MyDB;
-import Entities.Colis;
-import Services.ColisService;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.List;
@@ -30,10 +27,8 @@ public class FXMLDocumentController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
-        Connection con = MyDB.getInstance().getConnection();
-       
-        
     }
+        }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

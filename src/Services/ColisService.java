@@ -31,7 +31,7 @@ public class ColisService implements IColisService{
     @Override
     public void AjouterColis(Colis c) {
          try {
-            PreparedStatement pste = con.prepareStatement("INSERT INTO colis   VALUES (?,?,?,?,?,?,?);");
+            PreparedStatement pste = con.prepareStatement("INSERT INTO colis VALUES (?,?,?,?,?,?,?);");
             pste.setInt(1,c.getId());
             pste.setString(2,c.getDepart());
             pste.setString(3,c.getDestination());
