@@ -5,6 +5,8 @@
  */
 package fithnitek;
 
+import Entities.Livraison;
+import Services.LivraisonService;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.List;
@@ -27,12 +29,21 @@ public class FXMLDocumentController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
+        
+        Livraison l = new Livraison(1, "tunis", "saklabet", 10.3, "2020-2-14", 0);
+        LivraisonService LS = new LivraisonService();
+        LS.SupprimerLivraison(l);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
         }
     
   
+/* Livraison l = new Livraison(1, "tunis", "saklabet", 10.3, "2020-2-14", 0);
+        LivraisonService LS = new LivraisonService();
+        List<Livraison> lv = LS.AfficherLivraison();
+        for (Livraison liv : lv){
+            System.out.println(liv.getDepart());
+        }*/
