@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class MyDB {
     
-    String url = "jdbc:mysql://localhost/FiThnitek";
+    String url = "jdbc:mysql://localhost/Fithnitek";
     String login = "root";
     String pwd = "";
     public static MyDB instance;

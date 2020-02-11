@@ -28,6 +28,13 @@ public class Utilisateur {
         this.password = password;
         this.last_login = last_login;
     }
+    
+    public Utilisateur(int id, String username, String password,String email) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
     public int getId() {
         return id;

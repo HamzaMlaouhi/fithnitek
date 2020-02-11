@@ -5,9 +5,11 @@
  */
 package fithnitek;
 
+import Entities.Categorie;
+import Entities.Utilisateur;
+import Services.CategorieService;
+import Services.UtilisateurService;
 import java.net.URL;
-import java.sql.Connection;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,12 +28,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
-        label.setText("Hello World!");
+        Utilisateur U = new Utilisateur(3, "Mlaouhi", "MLaouhi@gmail.com", "tw aandy");
+        UtilisateurService US = new UtilisateurService();
+        US.SupprimerUtilisateur(U);
+       
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
         }
     
