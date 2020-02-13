@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fithnitek;
+package GUI;
 
 import Services.ReclamationService;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,16 +22,15 @@ import javafx.stage.Stage;
 public class FiThnitek extends Application {
     
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+    public void start(Stage primaryStage) throws Exception {
 
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
-        ReclamationService rs = new ReclamationService();
-
-        System.out.println(rs.displayReclamation());
+            //Adding the FXMLLoader for loginPages
+             Parent root = FXMLLoader.load(getClass().getResource("ReclamationUI.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("Hello World!");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+       
     }
 
     /**
