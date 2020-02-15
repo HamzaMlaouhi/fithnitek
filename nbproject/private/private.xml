@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/Entities/Categorie.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/Services/CategorieService.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/fithnitek/FiThnitek.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/DataBase/MyDB.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/IServices/ICategorieService.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/Services/ColisService.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/fithnitek/FXMLDocumentController.java</file>
+        </group>
     </open-files>
 </project-private>
