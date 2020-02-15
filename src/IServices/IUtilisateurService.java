@@ -12,6 +12,8 @@ import Entities.Utilisateur;
  * @author Hamza Mlaouhi
  */
 public interface IUtilisateurService {
-    public void Sign_up(Utilisateur U);
-    public void Log_in(Utilisateur U);
+   public void ModifierUtilisateur(Utilisateur u);
+   public void SupprimerUtilisateur(Utilisateur u);
+   public void Sign_up(Utilisateur U);
+   public void Log_in(String username , String password);
 }

@@ -16,21 +16,20 @@ public class Livraison {
     private int id;
     private String depart;
     private String destination;
-    private float poid_disponible;
-    private Date temp_estime;
+    private double poid_disponible;
+    private String temp_estime;
     private Colis[] colis;
     private int note_livraison;
 
     public Livraison() {
     }
 
-    public Livraison(int id, String depart, String destination, float poid_disponible, Date temp_estime, Colis[] colis, int note_livraison) {
+    public Livraison(int id, String depart, String destination, double poid_disponible, String temp_estime, int note_livraison) {
         this.id = id;
         this.depart = depart;
         this.destination = destination;
         this.poid_disponible = poid_disponible;
         this.temp_estime = temp_estime;
-        this.colis = colis;
         this.note_livraison = note_livraison;
     }
 
@@ -46,11 +45,11 @@ public class Livraison {
         return destination;
     }
 
-    public float getPoid_disponible() {
+    public double getPoid_disponible() {
         return poid_disponible;
     }
 
-    public Date getTemp_estime() {
+    public String getTemp_estime() {
         return temp_estime;
     }
 
@@ -78,7 +77,7 @@ public class Livraison {
         this.poid_disponible = poid_disponible;
     }
 
-    public void setTemp_estime(Date temp_estime) {
+    public void setTemp_estime(String temp_estime) {
         this.temp_estime = temp_estime;
     }
 
