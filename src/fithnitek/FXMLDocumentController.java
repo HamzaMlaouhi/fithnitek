@@ -38,12 +38,9 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
-}
+        }
     
-  
-/* Livraison l = new Livraison(1, "tunis", "saklabet", 10.3, "2020-2-14", 0);
-        LivraisonService LS = new LivraisonService();
-        List<Livraison> lv = LS.AfficherLivraison();
-        for (Livraison liv : lv){
-            System.out.println(liv.getDepart());
-        }*/
+        
+    
+
+

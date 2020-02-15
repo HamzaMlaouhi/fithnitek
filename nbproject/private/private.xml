@@ -3,16 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/abder/Desktop/project/fithnitek/src/Services/LivraisonService.java</file>
-=======
-            <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/IServices/IColisService.java</file>
+
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/Entities/Categorie.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/Services/CategorieService.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/fithnitek/FiThnitek.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/DataBase/MyDB.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/IServices/ICategorieService.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/Services/ColisService.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/Projet%20Java/fithnitek/src/fithnitek/FXMLDocumentController.java</file>
+
+            <!--<file>file:/C:/Users/abder/Desktop/project/fithnitek/src/Services/LivraisonService.java</file>-->
+
+
+            <!-- <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/IServices/IColisService.java</file>
             <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/fithnitek/FiThnitek.java</file>
             <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/Services/UtilisateurService.java</file>
             <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/fithnitek/FXMLDocumentController.java</file>
             <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/Entities/Utilisateur.java</file>
-            <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/Services/CategorieService.java</file>
->>>>>>> 75735bba61ab8a93f1f7cb831b83e2bcc29c632c
+            <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/Services/CategorieService.java</file>-->
+
         </group>
     </open-files>
 </project-private>
