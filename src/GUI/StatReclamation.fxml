@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="635.0" style="-fx-background-color: #990000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StatReclamationController">
+   <children>
+      <AnchorPane layoutY="66.0" prefHeight="439.0" prefWidth="635.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Label layoutX="48.0" layoutY="21.0" prefHeight="36.0" prefWidth="299.0" text="Statistique Reclamation" textFill="#990000">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <PieChart fx:id="pie" layoutX="97.0" layoutY="70.0" prefHeight="321.0" prefWidth="442.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnAjout" layoutX="7.0" layoutY="25.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Ajouter Reclamation" textFill="WHITE" />
+      <Button fx:id="btnListe" layoutX="170.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Liste des Reclamations" textFill="WHITE" />
+      <Button fx:id="btnstat" layoutX="342.0" layoutY="25.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Statistique Reclamations" textFill="WHITE" />
+   </children>
+</AnchorPane>

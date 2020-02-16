@@ -12,6 +12,8 @@ import IServices.IReclamationService;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,7 +30,7 @@ public class ReclamationService implements IReclamationService{
     public ReclamationService(){
         con = MyDB.getInstance().getConnection();
     }
-
+    
 
     @Override
     public void ajouterReclamation(Reclamation r)  {
@@ -47,18 +49,29 @@ public class ReclamationService implements IReclamationService{
     }
 
     @Override
-    public void supprimerReclamation(Reclamation r)  {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void supprimerReclamation(int id)  {
+         try {
+            PreparedStatement pt = con.prepareStatement("delete from reclamation where id=?");
+            pt.setInt(1, id);
+            pt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ReclamationService.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        try {
+
+
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+       /* try {
 
             ste = con.createStatement();
 
-            String requeteSupprime = "DELETE FROM reclamation WHERE id ="+r.getId();
+            String requeteSupprime = "delete from reclamation where id=?";
             ste.executeUpdate(requeteSupprime);
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
-        }
+        }*/
+        
     }
 
     @Override
@@ -99,5 +112,22 @@ public class ReclamationService implements IReclamationService{
         }
         return reclamationList ;
     }
-
+        
+    @Override
+    public int CountService(String Service) {
+        int i=0;
+        try {
+            PreparedStatement pt;
+            String query = "select * from reclamation where typereclamation='"+Service+"'";
+            pt=con.prepareStatement(query);
+            ResultSet rs = pt.executeQuery();
+            while(rs.next()){
+                i+=1;
+            }
+        }
+         catch (SQLException ex) {
+            System.out.println("Erreur " + ex.getMessage());
+        }  
+        return i;
+    }
 }

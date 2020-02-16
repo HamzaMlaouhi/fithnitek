@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Entities.Reclamation;
 import Services.ReclamationService;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -25,11 +26,13 @@ public class FiThnitek extends Application {
     public void start(Stage primaryStage) throws Exception {
 
             //Adding the FXMLLoader for loginPages
-             Parent root = FXMLLoader.load(getClass().getResource("ReclamationUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("ReclamationUI.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("Hello World!");
             primaryStage.setScene(scene);
             primaryStage.show();
+            
+            
        
     }
 
