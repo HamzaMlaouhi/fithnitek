@@ -15,8 +15,9 @@ import java.util.List;
  */
 public interface IReclamationService {
     public void ajouterReclamation (Reclamation r);
-    public void supprimerReclamation (Reclamation r);
+    public void supprimerReclamation (int id);
     public Reclamation rechercherReclamation (Reclamation r);
     public List<Reclamation> displayReclamation();
+    public int CountService(String Service);
     
 }

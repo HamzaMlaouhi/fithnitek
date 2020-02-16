@@ -5,7 +5,6 @@
  */
 package GUI;
 
-import Entities.Reclamation;
 import Services.ReclamationService;
 import java.io.IOException;
 import java.net.URL;
@@ -21,8 +20,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 /**
@@ -30,22 +27,14 @@ import javafx.stage.Stage;
  *
  * @author HP
  */
-public class ReclamationUIController implements Initializable {
+public class StatReclamationController implements Initializable {
 
     @FXML
-    private TextArea txtMsgRec;
-    @FXML
-    private ComboBox<String> cbTypeRec;
+    private PieChart pie;
     @FXML
     private Button btnAjout;
     @FXML
     private Button btnListe;
-
-    ObservableList<String> listetype = FXCollections.observableArrayList("message1","message2","message3","message4");
-    @FXML
-    private Button btnEnv;
-    @FXML
-    private Button btnAnnuler;
     @FXML
     private Button btnstat;
 
@@ -55,35 +44,30 @@ public class ReclamationUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        cbTypeRec.setItems(listetype);
+        int i,j,k,f,r;
+       ReclamationService a = new ReclamationService();
+       i=a.CountService("message1");
+       k=a.CountService("message2");
+       f=a.CountService("message3");
+       r=a.CountService("message4");
+        ObservableList<PieChart.Data> pieChartData =
+               FXCollections.observableArrayList(
+                       new PieChart.Data("message1",i),
+                       new PieChart.Data("message2",k),
+                       new PieChart.Data("message3",f),
+                       new PieChart.Data("message4",r)
+               );
+        pie.setData(pieChartData);
     }    
 
     @FXML
-    private void envoyerReclamation(ActionEvent event) {
-            ReclamationService sp = new ReclamationService();
-            Reclamation r=new Reclamation();
-            r.setTypereclamation(cbTypeRec.getValue());
-            r.setMessage(txtMsgRec.getText());
-            //r.setId(8);
-            r.setIdutilisateur(1);
-            sp.ajouterReclamation(r);
-            
-           txtMsgRec.clear();
-    }
-
-    @FXML
-    private void AnnulerReclamation(ActionEvent event) {
-        txtMsgRec.clear();
-    }
-
-    @FXML
-    private void AjouterReclamation(ActionEvent event)throws IOException {
-        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    private void AjouterReclamation(ActionEvent event) throws IOException {
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("ReclamationUI.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Ajout Reclamation !");
         primaryStage.setScene(scene);
-        primaryStage.show();    
+        primaryStage.show();
     }
 
     @FXML
@@ -91,10 +75,11 @@ public class ReclamationUIController implements Initializable {
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("AfficherReclamation.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Ajout Reclamation !");
+        primaryStage.setTitle("Afficher Reclamation !");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
     @FXML
     private void AfficherStatReclamation(ActionEvent event) throws IOException {
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -104,6 +89,5 @@ public class ReclamationUIController implements Initializable {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
     
 }
