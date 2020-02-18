@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package fithnitek;
 
+import Entities.Categorie;
 import Entities.Utilisateur;
+import Services.CategorieService;
 import Services.UtilisateurService;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,6 +30,7 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("You clicked me!");
         Utilisateur U = new Utilisateur(3, "Mlaouhi", "MLaouhi@gmail.com", "tw aandy");
         UtilisateurService US = new UtilisateurService();
+        US.SupprimerUtilisateur(U);
        
     }
 

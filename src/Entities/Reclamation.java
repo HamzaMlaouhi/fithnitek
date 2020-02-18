@@ -27,10 +27,6 @@ public class Reclamation {
         this.idutilisateur = idutilisateur;
     }
 
-    public Reclamation(int id, String typereclamation, String message) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public int getId() {
         return id;
     }

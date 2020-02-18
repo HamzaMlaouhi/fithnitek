@@ -22,13 +22,13 @@ public class Personne extends Utilisateur {
     private String nom;
     private String prenom;
     private Byte image;
-    private String cin;
+    private int cin;
     private int num_tel;
 
     public Personne() {
     }
 
-    public Personne(Sexe sexe, String nom, String prenom, Byte image, String cin, int num_tel, int id,
+    public Personne(Sexe sexe, String nom, String prenom, Byte image, int cin, int num_tel, int id,
             String username, String email, String password, Date last_login) {
         super(id, username, email, password, last_login);
         this.sexe = sexe;
@@ -55,7 +55,7 @@ public class Personne extends Utilisateur {
         return image;
     }
 
-    public String getCin() {
+    public int getCin() {
         return cin;
     }
 
@@ -79,7 +79,7 @@ public class Personne extends Utilisateur {
         this.image = image;
     }
 
-    public void setCin(String cin) {
+    public void setCin(int cin) {
         this.cin = cin;
     }
 
