@@ -130,4 +130,23 @@ public class ReclamationService implements IReclamationService{
         }  
         return i;
     }
+
+    @Override
+    public List<Reclamation> trier() throws SQLException{
+    List<Reclamation> arr=new ArrayList<>();
+        ste = con.createStatement();
+         String sql="select * from Reclamation order by id desc";
+          ResultSet rs=ste.executeQuery(sql);
+           while (rs.next()) {                
+    int id=rs.getInt(1);
+    String type_rec =rs.getString(2);
+    String msg =rs.getString(3);
+    int id_usr=rs.getInt(4);
+
+    Reclamation s= new Reclamation(id, type_rec, msg, id_usr);
+    arr.add(s);
+     }
+    return arr;   
+    
+    }
 }

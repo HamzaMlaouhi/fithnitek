@@ -64,6 +64,8 @@ public class AfficherReclamationController implements Initializable {
     ReclamationService rs = new ReclamationService();
     Entities.Reclamation r = new Entities.Reclamation();
     List<Reclamation> ls;
+    @FXML
+    private Button btnMail;
 
     /**
      * Initializes the controller class.
@@ -73,7 +75,8 @@ public class AfficherReclamationController implements Initializable {
         // TODO
         load();
     }    
-    public void load (){
+    //Remplir la tableView depuit la base 
+    public void load (){ 
         ListRec.setVisible(true);
         ls = rs.displayReclamation();
         data = FXCollections.observableArrayList();
@@ -82,9 +85,7 @@ public class AfficherReclamationController implements Initializable {
                 data.add(new Reclamation(j.getId(),j.getTypereclamation(),j.getMessage(),j.getIdutilisateur()));
                 ListRec.setItems(data);
         });
-       
-        
-        
+      
         Id.setCellValueFactory(new PropertyValueFactory<>("id"));
         typereclamation.setCellValueFactory(new PropertyValueFactory<>("typereclamation"));
         message.setCellValueFactory(new PropertyValueFactory<>("message"));
@@ -165,6 +166,16 @@ public class AfficherReclamationController implements Initializable {
     private void AfficherStatReclamation(ActionEvent event) throws IOException {
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("StatReclamation.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Stat Reclamation !");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    @FXML
+    private void RependreParMail(ActionEvent event) throws IOException {
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("RependreParMail.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Stat Reclamation !");
         primaryStage.setScene(scene);

@@ -20,9 +20,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -43,11 +46,13 @@ public class ReclamationUIController implements Initializable {
 
     ObservableList<String> listetype = FXCollections.observableArrayList("message1","message2","message3","message4");
     @FXML
+    private Button btnstat;
+    @FXML
     private Button btnEnv;
     @FXML
     private Button btnAnnuler;
     @FXML
-    private Button btnstat;
+    private Button btnMail;
 
     /**
      * Initializes the controller class.
@@ -60,6 +65,7 @@ public class ReclamationUIController implements Initializable {
 
     @FXML
     private void envoyerReclamation(ActionEvent event) {
+        if(!"".equals(txtMsgRec.getText())){
             ReclamationService sp = new ReclamationService();
             Reclamation r=new Reclamation();
             r.setTypereclamation(cbTypeRec.getValue());
@@ -68,7 +74,15 @@ public class ReclamationUIController implements Initializable {
             r.setIdutilisateur(1);
             sp.ajouterReclamation(r);
             
-           txtMsgRec.clear();
+            txtMsgRec.clear();
+        }else {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Please Fill the Fields");
+            alert.setContentText("*You Have Missed to fill some Fields");
+            alert.showAndWait();
+
+        }
     }
 
     @FXML
@@ -104,6 +118,18 @@ public class ReclamationUIController implements Initializable {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    @FXML
+    private void RependreParMail(ActionEvent event) throws IOException {
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("RepondreReclamation.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Stat Reclamation !");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+
 
     
 }

@@ -27,5 +27,6 @@
       <Button fx:id="btnAjout" layoutX="7.0" layoutY="25.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Ajouter Reclamation" textFill="WHITE" />
       <Button fx:id="btnListe" layoutX="170.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Liste des Reclamations" textFill="WHITE" />
       <Button fx:id="btnstat" layoutX="339.0" layoutY="25.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Statistique Reclamations" textFill="WHITE" />
+      <Button fx:id="btnMail" layoutX="491.0" layoutY="25.0" mnemonicParsing="false" onAction="#RependreParMail" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: #990000;" text="Rependre par Email" textFill="WHITE" />
    </children>
 </AnchorPane>

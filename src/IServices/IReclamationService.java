@@ -6,6 +6,7 @@
 package IServices;
 
 import Entities.Reclamation;
+import java.sql.SQLException;
 
 import java.util.List;
 
@@ -19,5 +20,6 @@ public interface IReclamationService {
     public Reclamation rechercherReclamation (Reclamation r);
     public List<Reclamation> displayReclamation();
     public int CountService(String Service);
+    public List<Reclamation> trier() throws SQLException;
     
 }

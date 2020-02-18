@@ -37,6 +37,8 @@ public class StatReclamationController implements Initializable {
     private Button btnListe;
     @FXML
     private Button btnstat;
+    @FXML
+    private Button btnMail;
 
     /**
      * Initializes the controller class.
@@ -84,6 +86,16 @@ public class StatReclamationController implements Initializable {
     private void AfficherStatReclamation(ActionEvent event) throws IOException {
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("StatReclamation.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Stat Reclamation !");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    @FXML
+    private void RependreParMail(ActionEvent event) throws IOException {
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("RepondreReclamation.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Stat Reclamation !");
         primaryStage.setScene(scene);
