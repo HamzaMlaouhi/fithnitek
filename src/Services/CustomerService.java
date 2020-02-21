@@ -44,7 +44,7 @@ public class CustomerService implements ICustomerService{
     public void createCostumor(String nom,String description) {
         try {
             Map<String,Object> customerMap = new HashMap<>();
-            customerMap.put("email",UtilisateurService.currentUser.getEmail()); // Will be with Session
+            //customerMap.put("email",UtilisateurService.currentUser.getEmail()); // Will be with Session
             customerMap.put("name",nom);
             customerMap.put("description",description);// Will be with Session
             Customer customer = Customer.create(customerMap);
@@ -92,7 +92,7 @@ public class CustomerService implements ICustomerService{
         Customer customer = getCurrentCostumer();
         try {
             Map<String,Object> chargeParam = new HashMap<>();
-            chargeParam.put("amount", c.getPrix());
+            //chargeParam.put("amount", c.getPrix());
             chargeParam.put("currency", currency);
             chargeParam.put("customer",getCurrentId() ); 
             Charge.create(chargeParam);
@@ -102,7 +102,7 @@ public class CustomerService implements ICustomerService{
             ste = con.prepareStatement(sql);
             ste.setString(1, customer.getId());
             ste.setString(2, c.getLabel());
-            ste.setInt(3, c.getPrix());
+            //ste.setInt(3, c.getPrix());
             ste.setString(4,currency);
             //ste.setString(5, c.getStatus()); // TO DO in Colis Class
             ste.setString(5,"Payed");
@@ -118,7 +118,7 @@ public class CustomerService implements ICustomerService{
             try {
             String sql = "SELECT id From Customer where email=?";
             ste = con.prepareStatement(sql);
-            ste.setString(1,UtilisateurService.currentUser.getEmail());
+            //ste.setString(1,UtilisateurService.currentUser.getEmail());
             ResultSet result = ste.executeQuery();
             while(result.next())
                 customerId = result.getString("id");

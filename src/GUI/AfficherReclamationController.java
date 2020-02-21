@@ -95,7 +95,7 @@ public class AfficherReclamationController implements Initializable {
     @FXML
     private void SupprimerReclamation(ActionEvent event) {
         Reclamation r = ListRec.getSelectionModel().getSelectedItem();
-        rs.supprimerReclamation(r.getId());
+        rs.supprimerReclamation(r);
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
         alert.setHeaderText("Look, a Confirmation Dialog");

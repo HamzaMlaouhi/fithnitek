@@ -54,7 +54,7 @@ public class PaymentController implements Initializable {
         cs.createCustomerCard(txtCardNumber.getText(), txtMonth.getText(), txtYear.getText(), txtVcV.getText());
         Colis c = new Colis(); // This will be retrieved from the "Colis" Page
         c.setLabel("Colis 1");
-        c.setPrix(300);
+        //c.setPrix(300);
         cs.checkoutPayment("usd", c);
         
     }
