@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fithnitek;
+package GUI;
 
-import Entities.Livraison;
-import Services.LivraisonService;
+import Services.CustomerService;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -25,13 +24,14 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-
-        label.setText("Hello World!");
-
-        Livraison l = new Livraison(1, "tunis", "saklabet", 10.3, "2020-2-14", 0);
-        LivraisonService LS = new LivraisonService();
-        LS.SupprimerLivraison(l);
+        CustomerService cs = new CustomerService();
+        /*cs.createCostumor("test11@gmail.com","test test","test Description");
+        cs.createCustomerCard("4242424242424242","11","2020","223");
+        Colis c = new Colis();
+        c.setPrix(300);
+        c.setLabel("Bakou 7lib");
+        cs.checkoutPayment("usd",c);*/
+        //cs.createTransfer(400, "usd", "ORDER_45");
 
     }
 

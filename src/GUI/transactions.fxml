@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TransactionsController">
+   <children>
+      <TableView fx:id="tabTransactions" layoutX="10.0" layoutY="75.0" prefHeight="250.0" prefWidth="585.0">
+        <columns>
+          <TableColumn fx:id="cID" prefWidth="26.0" text="ID" />
+          <TableColumn fx:id="CidCostumer" prefWidth="88.0" text="ID Costumer" />
+            <TableColumn fx:id="CpackageName" prefWidth="111.0" text="Package Name" />
+            <TableColumn fx:id="cAmount" prefWidth="94.0" text="Amount Payed" />
+            <TableColumn fx:id="cCurrency" prefWidth="90.0" text="Currency used" />
+            <TableColumn fx:id="cStatus" prefWidth="74.0" text="Status" />
+            <TableColumn fx:id="cPurchaseTime" prefWidth="101.0" text="Purchase Time" />
+        </columns>
+      </TableView>
+      <Label layoutX="195.0" layoutY="21.0" text="Transactions List">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnPrintBill" layoutX="249.0" layoutY="345.0" mnemonicParsing="false" onAction="#PrintBill" prefHeight="25.0" prefWidth="108.0" text="Print Bill" />
+   </children>
+</AnchorPane>

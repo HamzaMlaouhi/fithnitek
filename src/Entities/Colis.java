@@ -16,7 +16,8 @@ public class Colis {
     private String depart;
     private String destination ;
     private String date_limit ;       
-    private String label ;       
+    private String label ;
+    private int prix;
     private String description ;       
     private Element[] elements ;
     private int idUtilisateur ;       
@@ -35,6 +36,16 @@ public class Colis {
       
         this.idUtilisateur = idUtilisateur;
     }
+
+    public int getPrix() {
+        return prix;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
+    
+    
    
     
     public int getId() {
