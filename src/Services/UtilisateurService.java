@@ -14,13 +14,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import Entities.Personne;
-import Entities.UtilisateurSession;
+import java.sql.Statement;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Hamza Mlaouhi
  */
 public class UtilisateurService implements IUtilisateurService {
+
+    private Statement ste;
 
     Connection con;
     private ResultSet resultSet;
@@ -94,36 +99,40 @@ public class UtilisateurService implements IUtilisateurService {
     }
 
     @Override
-    public void Log_in(String username, String password) {
-
-//           Utilisateur  acc=new Utilisateur();
-//           username = acc.getUsername().getText(); 
-//           password = acc.getPassword().getText();  
-        String Pword = null;
+    public boolean Log_in(String username, String password) {
 
         try {
-//            String sql = "SELECT username, password FROM fos_user WHERE  username = ? and password=?";
-            String sql ="Select * from fos_user F JOIN personne P ON F.id=P.idutilisateur WHERE  username = ? and password=?";
-            System.out.println(sql);
-            PreparedStatement ste = con.prepareStatement(sql);
-            ste.setString(1, username);
-            ste.setString(2, password);
-            resultSet = ste.executeQuery();
-            boolean loginSucc = resultSet.next();
-            if (loginSucc) {
-                Pword = resultSet.getString(password);
-                UtilisateurSession.getInstace(resultSet.getString("email"), resultSet.getString("nom"), resultSet.getString("prenom"));
- 
-            }
-            if (Pword.equals(password)) {
-                JOptionPane.showMessageDialog(null, "go a head Login ", "Welcome FiThnitek", JOptionPane.PLAIN_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "Your password is Wrong ", "Try Again", 1);
+
+            ste = con.createStatement();
+            ResultSet rs = ste.executeQuery("Select P.*,F.* from fos_user F JOIN personne P ON F.id=P.idutilisateur WHERE  username ='" + username + "' and password='" + password + "'");
+
+            while (rs.next()) {
+                System.out.println("111");
+                int id = rs.getInt("F.id");
+                String nom = rs.getString("P.nom");
+                String prenom = rs.getString("P.prenom");
+                String image = rs.getString("P.image");
+                int cin = rs.getInt("P.cin");
+                int num_tel = rs.getInt("P.NumTel");
+                String sexe = rs.getString("P.sexe");
+                String userraplacement = rs.getString("F.username");
+                String passreplacement = rs.getString("F.password");
+                String email = rs.getString("F.email");
+                Date last_login = rs.getDate("F.last_login");
+
+                System.out.println(id);
+
+                Personne.user = new Personne(sexe, nom, prenom, image, cin, num_tel, id, username, password, email, null);
+
+                System.out.println(Personne.user);
+//  }
+                return true;
             }
 
         } catch (SQLException ex) {
-            ex.getMessage();
+            Logger.getLogger(UtilisateurService.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+        return false;
 
+    }
 }

@@ -16,5 +16,5 @@ public interface IUtilisateurService {
    public void ModifierUtilisateur(Utilisateur u);
    public void SupprimerUtilisateur(Utilisateur u);
    public void Sign_up(Utilisateur U , Personne p);
-   public void Log_in(String username, String password);
+   public boolean Log_in(String username, String password);
 }

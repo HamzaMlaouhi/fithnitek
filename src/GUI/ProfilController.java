@@ -5,9 +5,16 @@
  */
 package GUI;
 
+import Entities.Personne;
+import Entities.Utilisateur;
+import Services.UtilisateurService;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -16,12 +23,26 @@ import javafx.fxml.Initializable;
  */
 public class ProfilController implements Initializable {
 
+    @FXML
+    private Label txtlast_name;
+    @FXML
+    private Label txtEmail;
+    @FXML
+    private Label txtbirthday;
+    @FXML
+    private Button btnModify;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+     txtlast_name.setText(Personne.user.getEmail());
+       
     }    
+
+    @FXML
+    private void ModifyAction(ActionEvent event) {
+    }
     
 }

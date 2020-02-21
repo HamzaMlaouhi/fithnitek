@@ -5,7 +5,6 @@
  */
 package GUI;
 
-import Entities.UtilisateurSession;
 import Services.UtilisateurService;
 import java.io.IOException;
 import java.net.URL;
@@ -29,32 +28,49 @@ import javafx.stage.Stage;
  */
 public class LogInController implements Initializable {
 
-    
     @FXML
     private Button btnLogIn;
     @FXML
     private PasswordField txtPassWord;
     @FXML
     private TextField txtLogIn;
-    
+    @FXML
+    private Button btnSignIn;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
-    private void loginAction(ActionEvent event) {
+    private void loginAction(ActionEvent event) throws IOException {
         UtilisateurService us = new UtilisateurService();
-        us.Log_in(txtLogIn.getText() ,txtPassWord.getText());
-        try{
-     Parent Sview = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
+        boolean success = us.Log_in(txtLogIn.getText(), txtPassWord.getText());
+        if (success) {
+
+            FXMLLoader loader = new FXMLLoader(getClass()
+                    .getResource("Profil.fxml"));
+
+            Parent root = loader.load();
+            ProfilController apc = loader.getController();
+            btnLogIn.getScene().setRoot(root);
+
+        }
+
+    }
+
+    @FXML
+    private void SignAction(ActionEvent event) {
+
+        try {
+            Parent Sview = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
             Scene SC = new Scene(Sview);
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(SC);
             window.show();
-        }catch(IOException ex){
-            
+        } catch (IOException ex) {
+
         }
     }
-    
+
 }

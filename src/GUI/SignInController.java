@@ -17,7 +17,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import Entities.Utilisateur;
-import Entities.UtilisateurSession;
 
 /**
  * FXML Controller class
