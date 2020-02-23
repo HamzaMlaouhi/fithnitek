@@ -19,7 +19,6 @@ public class Personne extends Utilisateur {
     private String image;
     private int cin;
     private int num_tel;
-    //public static Personne currentUser;
     public static Personne user;
 
     public Personne() {

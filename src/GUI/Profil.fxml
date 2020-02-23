@@ -4,13 +4,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProfilController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="201.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="txtlast_name" layoutX="270.0" layoutY="217.0" prefHeight="29.0" prefWidth="61.0" text="Label" />
-      <Label fx:id="txtEmail" layoutX="270.0" layoutY="250.0" prefHeight="29.0" prefWidth="61.0" text="Label" />
-      <Label fx:id="txtbirthday" layoutX="270.0" layoutY="285.0" prefHeight="29.0" prefWidth="61.0" text="Label" />
-      <Button fx:id="btnModify" layoutX="242.0" layoutY="361.0" mnemonicParsing="false" onAction="#ModifyAction" text="Modify Your Profile" />
+      <ImageView fx:id="ProfImage" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="txtFull_name" layoutX="247.0" layoutY="205.0" prefHeight="29.0" prefWidth="113.0" text="Label">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="txtEmail" layoutX="247.0" layoutY="234.0" prefHeight="29.0" prefWidth="113.0" text="Label">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="txtTelNum" layoutX="247.0" layoutY="263.0" prefHeight="29.0" prefWidth="113.0" text="Label">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Button fx:id="btnSetting" layoutX="301.0" layoutY="342.0" mnemonicParsing="false" onAction="#SettingAction" prefHeight="37.0" prefWidth="119.0" style="-fx-background-color: #0598ff;" text="Setting" textFill="WHITE" />
+      <Button fx:id="btnLogOut" layoutX="160.0" layoutY="342.0" mnemonicParsing="false" onAction="#LogOutAction" prefHeight="37.0" prefWidth="119.0" style="-fx-background-color: #0598ff;" text="Log Out" textFill="WHITE" />
    </children>
 </AnchorPane>

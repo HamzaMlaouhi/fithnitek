@@ -17,7 +17,6 @@ public interface IElementService {
     public void AjouterElemnet(Element e);
    public void ModifierElement(Element e);
    public void SupprimerElement(Element e);
-   public List<Element> AfficherListElementColis(int id);
    public List<Element > AfficherElement();
     
 }

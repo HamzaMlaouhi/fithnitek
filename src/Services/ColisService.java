@@ -7,7 +7,6 @@ package Services;
 
 import DataBase.MyDB;
 import Entities.Colis;
-import Entities.Element;
 import IServices.IColisService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,45 +29,20 @@ public class ColisService implements IColisService{
     con = MyDB.getInstance().getConnection();}
 
     @Override
-    public void AjouterColis(Colis c , List<Element> elements) {
-        int idColis=0;
-
-        // Adding Package Request
+    public void AjouterColis(Colis c) {
          try {
-            PreparedStatement pste = con.prepareStatement("INSERT INTO colis( depart , destination,date_limit , label , description,image,idUtilisateur)  VALUES (?,?,?,?,?,?,?);");
-//            pste.setInt(1,c.getId());
-            pste.setString(1,c.getDepart());
-            pste.setString(2,c.getDestination());
-            pste.setString(3,c.getDate_limit());
-            pste.setString(4,c.getLabel()); 
-            pste.setString(5,c.getDescription());
-            pste.setString(6,c.getImage());
-            pste.setInt(7,c.getIdUtilisateur());
+            PreparedStatement pste = con.prepareStatement("INSERT INTO colis VALUES (?,?,?,?,?,?,?);");
+            pste.setInt(1,c.getId());
+            pste.setString(2,c.getDepart());
+            pste.setString(3,c.getDestination());
+            pste.setString(4,c.getDate_limit());
+            pste.setString(5,c.getLabel()); 
+            pste.setString(6,c.getDescription()); 
+            pste.setInt(7,c.getIdUtilisateur()); 
             pste.executeUpdate();
         } catch (SQLException ex) {
            ex.getMessage();
         } 
-         try {
-             // Retrieving PAckage ID
-             PreparedStatement pste = con.prepareStatement("Select id from colis where label=?");
-             pste.setString(1,c.getLabel());
-             ResultSet res = pste.executeQuery();
-             while(res.next()){
-                 idColis = res.getInt(1);
-             }
-         } catch (SQLException ex) {
-             Logger.getLogger(ColisService.class.getName()).log(Level.SEVERE, null, ex);
-         }  
-         for(Element e : elements){
-            try {
-                PreparedStatement pste = con.prepareStatement("Insert Into coliselements Values (?,?)");
-                pste.setInt(1,idColis);
-                pste.setInt(2, e.getId());
-                pste.executeUpdate();
-            } catch (SQLException ex) {
-                Logger.getLogger(ColisService.class.getName()).log(Level.SEVERE, null, ex);
-            }
-         }
     }
 
     @Override
@@ -99,8 +73,6 @@ public class ColisService implements IColisService{
             ex.getMessage();
         }
         }
-    
-    
 
     @Override
     public List<Colis> AfficherColis() {
@@ -112,7 +84,6 @@ public class ColisService implements IColisService{
             while(res.next())
             {
                 Colis c = new Colis(res.getInt("id"),res.getString("depart"),res.getString("destination"),res.getString("date_limit"),res.getString("label"),res.getString("description"),res.getInt("idUtilisateur") );
-                c.setImage(res.getString("image"));
                 listColis.add(c);
             }
      }catch(SQLException ex){

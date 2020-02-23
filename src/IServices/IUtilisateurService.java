@@ -13,8 +13,8 @@ import Entities.Utilisateur;
  * @author Hamza Mlaouhi
  */
 public interface IUtilisateurService {
-   public void ModifierUtilisateur(Utilisateur u);
-   public void SupprimerUtilisateur(Utilisateur u);
+   public void ModifierUtilisateur(Utilisateur u, Personne p);
+   public void SupprimerUtilisateur();
    public void Sign_up(Utilisateur U , Personne p);
    public boolean Log_in(String username, String password);
 }
