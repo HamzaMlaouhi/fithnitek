@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogInController">
    <children>
-      <Button fx:id="btnLogIn" layoutX="194.0" layoutY="274.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="39.0" prefWidth="71.0" text="Log in" />
-      <Button fx:id="btnSignIn" layoutX="308.0" layoutY="274.0" mnemonicParsing="false" onAction="#SignAction" prefHeight="39.0" prefWidth="71.0" text="Sign in" />
-      <PasswordField fx:id="txtPassWord" layoutX="186.0" layoutY="200.0" prefHeight="29.0" prefWidth="202.0" promptText="Password" />
-      <TextField fx:id="txtLogIn" layoutX="185.0" layoutY="150.0" prefHeight="29.0" prefWidth="202.0" promptText="Email or Username" />
+      <Pane prefHeight="400.0" prefWidth="290.0" style="-fx-background-color: #0598ff;">
+         <children>
+            <ImageView fx:id="LogoViewID" fitHeight="158.0" fitWidth="202.0" layoutX="68.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
+         </children></Pane>
+      <Button fx:id="btnLogIn" layoutX="354.0" layoutY="243.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: #0589ff;" text="Log in" textFill="WHITE" />
+      <Button fx:id="btnSignIn" layoutX="468.0" layoutY="243.0" mnemonicParsing="false" onAction="#SignAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: #0589ff;" text="Sign in" textFill="WHITE" />
+      <PasswordField fx:id="txtPassWord" layoutX="346.0" layoutY="169.0" prefHeight="29.0" prefWidth="202.0" promptText="Password" style="-fx-border-color: #0598ff;" />
+      <TextField fx:id="txtLogIn" layoutX="345.0" layoutY="119.0" prefHeight="29.0" prefWidth="202.0" promptText="Email or Username" style="-fx-border-color: #0598ff;" />
+      <Hyperlink fx:id="HypForgetPass" layoutX="372.0" layoutY="335.0" onAction="#ForgetPassAction" prefHeight="28.0" prefWidth="158.0" text="Forget Your Password ?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>

@@ -3,9 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/pi_java/fithnitek/src/GUI/HomePageController.java</file>
             <file>file:/C:/pi_java/fithnitek/src/Services/ColisService.java</file>
             <file>file:/C:/pi_java/fithnitek/src/GUI/FiThnitek.java</file>
+=======
+            <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/GUI/SignInController.java</file>
+            <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/GUI/LogInController.java</file>
+            <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/Services/UtilisateurService.java</file>
+            <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/GUI/ProfilController.java</file>
+>>>>>>> d8e4ff506f784431a3e9ad29ef6023eea8e1ec49
         </group>
     </open-files>
 </project-private>

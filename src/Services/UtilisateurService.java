@@ -12,7 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 import Entities.Personne;
 import java.sql.Statement;
 import java.util.Date;
@@ -72,27 +71,57 @@ public class UtilisateurService implements IUtilisateurService {
     }
 
     @Override
-    public void ModifierUtilisateur(Utilisateur u) {
+    public void ModifierUtilisateur(Utilisateur u, Personne p) {
+//        try {
+//            String sql = "UPDATE fos_user SET username=? ,email=?  WHERE id=?";
+//
+//            PreparedStatement ste = con.prepareStatement(sql);
+//            
+//            ste.setString(1, u.getUsername());
+//            ste.setString(2, u.getEmail());
+//            ste.setInt(3, u.getId());
+//
+//            ste.executeUpdate();
+//        } catch (SQLException ex) {
+//            ex.getMessage();
+//        }
         try {
-            String sql = "UPDATE fos_user SET username=? ,email=? , password=? WHERE id=?";
-            PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(4, u.getId());
-            ste.setString(1, u.getUsername());
-            ste.setString(2, u.getPassword());
-            ste.setString(3, u.getEmail());
-            ste.executeUpdate();
+            String sqlU = "UPDATE fos_user SET username=? ,email=?  WHERE id=?";
+            String sqlP = "UPDATE personne SET nom=? ,prenom=?  WHERE idutilisateur =?";
+            PreparedStatement steU = con.prepareStatement(sqlU);
+            PreparedStatement steP = con.prepareStatement(sqlP);
+
+            steU.setString(1, u.getUsername());
+            steU.setString(2, u.getEmail());
+            steU.setInt(3, Personne.user.getId());
+
+            steP.setString(1, p.getNom());
+            steP.setString(2, p.getPrenom());
+            steP.setInt(3, Personne.user.getId());
+
+            steU.executeUpdate();
+            steP.executeUpdate();
+
         } catch (SQLException ex) {
             ex.getMessage();
         }
     }
 
     @Override
-    public void SupprimerUtilisateur(Utilisateur u) {
+    public void SupprimerUtilisateur() {
         try {
-            String sql = "DELETE FROM fos_user WHERE id=? ";
-            PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(1, u.getId());
-            ste.executeUpdate();
+            String sqlU = "DELETE FROM fos_user WHERE id=? ";
+            String sqlP = "DELETE FROM personne WHERE idutilisateur=? ";
+
+            PreparedStatement steU = con.prepareStatement(sqlU);
+            PreparedStatement steP = con.prepareStatement(sqlP);
+
+            steU.setInt(1, Personne.user.getId());
+            steP.setInt(1, Personne.user.getId());
+            steP.executeUpdate();
+            steU.executeUpdate();
+
+
         } catch (SQLException ex) {
             ex.getMessage();
         }

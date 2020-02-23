@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SettingInterfaceController">
+   <children>
+      <TextField fx:id="txtLaNa" layoutX="363.0" layoutY="118.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #0598ff;" />
+      <TextField fx:id="txtNa" layoutX="445.0" layoutY="118.0" prefHeight="25.0" prefWidth="66.0" style="-fx-border-color: #0598ff;" />
+      <TextField fx:id="txtUser" layoutX="364.0" layoutY="162.0" style="-fx-border-color: #0598ff;" />
+      <Label layoutX="301.0" layoutY="122.0" text="Full Name" />
+      <Label layoutX="300.0" layoutY="166.0" text="Username" />
+      <TextField fx:id="txtMail" layoutX="364.0" layoutY="209.0" style="-fx-border-color: #0598ff;" />
+      <Label layoutX="276.0" layoutY="259.0" text="Phone Number" />
+      <TextField fx:id="txtNumb" layoutX="364.0" layoutY="255.0" style="-fx-border-color: #0598ff;" />
+      <Label layoutX="327.0" layoutY="213.0" text="Email" />
+      <Button fx:id="btnBackToProfil" layoutX="34.0" layoutY="263.0" mnemonicParsing="false" onAction="#BackToProfilAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Back" textFill="WHITE" />
+      <Button fx:id="btnModify" layoutX="34.0" layoutY="90.0" mnemonicParsing="false" onAction="#ModifyAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Modify" textFill="WHITE" />
+      <Button fx:id="btnChangePass" layoutX="34.0" layoutY="146.0" mnemonicParsing="false" onAction="#ChangePassAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Change You Password" textFill="WHITE" />
+      <Button fx:id="btnDelete" layoutX="34.0" layoutY="205.0" mnemonicParsing="false" onAction="#DeleteAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Delete You Account" textFill="WHITE" />
+   </children>
+</AnchorPane>
