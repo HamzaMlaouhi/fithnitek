@@ -6,7 +6,6 @@
 package Services;
 
 import DataBase.MyDB;
-import Entities.Categorie;
 import Entities.Element;
 import IServices.IElementService;
 import java.sql.Connection;
@@ -15,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import static java.util.Collections.list;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,14 +33,27 @@ public class ElementService implements IElementService{
 
     @Override
     public void AjouterElemnet(Element e){
-        try {
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            ste = con.createStatement();
-            String requeteInsert = "INSERT INTO element (id,name,quantite,prix,poid,image) VALUES ('"+e.getId()+ "', '" + e.getName()+ "', '" + e.getQuantite()+ "','"+e.getPrix()+"','"+e.getPoid()+"','"+e.getImage()+"');";
-            ste.executeUpdate(requeteInsert);
+         try {
+            PreparedStatement pste = con.prepareStatement("INSERT INTO element(name,quantite,prix,poid,image)  VALUES (?,?,?,?,?);");
+
+            
+            pste.setString(1,e.getName());
+            pste.setInt(2,e.getQuantite());
+            pste.setDouble(3,e.getPrix()); 
+            pste.setFloat(4,e.getPoid());
+            pste.setString(5,e.getImage()); 
+            pste.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(ElementService.class.getName()).log(Level.SEVERE, null, ex);
-        }
+           ex.getMessage();
+        } 
+//        try {
+//            
+//            ste = con.createStatement();
+//            String requeteInsert = "INSERT INTO element (id,name,quantite,prix,poid,image) VALUES ('"+e.getId()+ "', '" + e.getName()+ "', '" + e.getQuantite()+ "','"+e.getPrix()+"','"+e.getPoid()+"','"+e.getImage()+"');";
+//            ste.executeUpdate(requeteInsert);
+//        } catch (SQLException ex) {
+//            ex.getMessage();
+//        }
     }
 
     @Override
@@ -54,9 +67,6 @@ try {
             ste.setDouble(3,e.getPrix());
             ste.setFloat(4,e.getPoid());
             ste.setString(5,e.getImage());
-
-
-            
             ste.executeUpdate();
             } 
         catch (SQLException ex) {
@@ -78,20 +88,57 @@ try {
 
     @Override
     public List<Element> AfficherElement() {
-List<Element> listColis = new ArrayList<Element>();
+List<Element> listElement = new ArrayList<Element>();
         try {
-            String sql = "Select * From colis ";
+            String sql = "Select * From element ";
             Statement ste = con.createStatement();
             ResultSet res = ste.executeQuery(sql);
             while(res.next())
             {
                 Element e = new Element(res.getInt("id"),res.getString("name"),res.getInt("quantite"),res.getDouble("prix"),res.getFloat("poid"),res.getString("image") );
-                listColis.add(e);
+                listElement.add(e);
             }
      }catch(SQLException ex){
          ex.getMessage(); 
      }
-        return listColis;
+        return listElement;
+    }
+
+    @Override
+    public List<Element> AfficherListElementColis(int id) {
+        List<Integer> elementsId = new ArrayList<>();
+        List<Element> listElmentColis = new ArrayList<>();
+        try {
+            String sql = "Select idElement From coliselements where idColis="+id;
+            Statement stee = con.createStatement();
+            ResultSet res = stee.executeQuery(sql);
+            while(res.next())
+            {
+             elementsId.add(res.getInt(1));
+            }
+     }catch(SQLException ex){
+         ex.getMessage(); 
+     }
+        for(Integer i : elementsId){
+            try {
+            String sql = "Select * From element where id="+i;
+            Statement stee = con.createStatement();
+            ResultSet res = stee.executeQuery(sql);
+            while(res.next())
+            {
+             Element e = new Element();
+             e.setName(res.getString(2));
+             e.setPoid(res.getFloat(5));
+             e.setPrix(res.getDouble(4));
+             e.setQuantite(3);
+             listElmentColis.add(e);
+            }
+     }catch(SQLException ex){
+         ex.getMessage(); 
+     }
+        }
+        return listElmentColis;
+        
     }
     }    
 

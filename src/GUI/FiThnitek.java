@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fithnitek;
+package GUI;
 
-import Services.ReclamationService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,18 +16,14 @@ import javafx.stage.Stage;
  * @author asus
  */
 public class FiThnitek extends Application {
-    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+       // Parent root = FXMLLoader.load(getClass().getResource("ListViewElements.fxml"));
 
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
         stage.show();
-        ReclamationService rs = new ReclamationService();
-
-        System.out.println(rs.displayReclamation());
     }
 
     /**
