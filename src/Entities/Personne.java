@@ -12,23 +12,20 @@ import java.util.Date;
  * @author Wassim
  */
 public class Personne extends Utilisateur {
-    
-    public enum Sexe{
-        HOMME,
-        FEMME
-    }
 
-    private Sexe sexe;
+    private String sexe;
     private String nom;
     private String prenom;
-    private Byte image;
-    private String cin;
+    private String image;
+    private int cin;
     private int num_tel;
+    //public static Personne currentUser;
+    public static Personne user;
 
     public Personne() {
     }
 
-    public Personne(Sexe sexe, String nom, String prenom, Byte image, String cin, int num_tel, int id,
+    public Personne(String sexe, String nom, String prenom, String image, int cin, int num_tel, int id,
             String username, String email, String password, Date last_login) {
         super(id, username, email, password, last_login);
         this.sexe = sexe;
@@ -39,7 +36,7 @@ public class Personne extends Utilisateur {
         this.num_tel = num_tel;
     }
 
-    public Enum getSexe() {
+    public String getSexe() {
         return sexe;
     }
 
@@ -51,11 +48,11 @@ public class Personne extends Utilisateur {
         return prenom;
     }
 
-    public Byte getImage() {
+    public String getImage() {
         return image;
     }
 
-    public String getCin() {
+    public int getCin() {
         return cin;
     }
 
@@ -63,7 +60,7 @@ public class Personne extends Utilisateur {
         return num_tel;
     }
 
-    public void setSexe(Sexe sexe) {
+    public void setSexe(String sexe) {
         this.sexe = sexe;
     }
 
@@ -75,17 +72,21 @@ public class Personne extends Utilisateur {
         this.prenom = prenom;
     }
 
-    public void setImage(Byte image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public void setCin(String cin) {
+    public void setCin(int cin) {
         this.cin = cin;
     }
 
     public void setNum_tel(int num_tel) {
         this.num_tel = num_tel;
     }
+
+    @Override
+    public String toString() {
+        return "Personne{" + super.toString() + "sexe=" + sexe + ", nom=" + nom + ", prenom=" + prenom + ", image=" + image + ", cin=" + cin + ", num_tel=" + num_tel + '}';
+    }
+
 }
-
-

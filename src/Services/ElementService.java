@@ -9,12 +9,11 @@ import DataBase.MyDB;
 import Entities.Element;
 import IServices.IElementService;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import static java.util.Collections.list;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,6 +57,7 @@ public class ElementService implements IElementService{
 
     @Override
     public void ModifierElement(Element e) {
+
 try {
             String sql = "UPDATE element SET name=? ,quantite=? , poid=? ,prix=?,image=? WHERE id=?";
             PreparedStatement ste = con.prepareStatement(sql);
@@ -72,22 +72,18 @@ try {
         catch (SQLException ex) {
             ex.getMessage();
         }       }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     @Override
     public void SupprimerElement(Element e) {
-try {
-            String sql = "DELETE FROM element WHERE id=? ";
-            PreparedStatement ste = con.prepareStatement(sql);
-            ste.setInt(1,e.getId());
-            ste.executeUpdate();
-            } 
-        catch (SQLException ex) {
-            ex.getMessage();
-        }     
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public List<Element> AfficherElement() {
+
 List<Element> listElement = new ArrayList<Element>();
         try {
             String sql = "Select * From element ";
@@ -139,6 +135,9 @@ List<Element> listElement = new ArrayList<Element>();
         }
         return listElmentColis;
         
-    }
-    }    
 
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    }
+
+}

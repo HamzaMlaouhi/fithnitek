@@ -12,11 +12,13 @@ import java.util.Date;
  * @author Hamza Mlaouhi
  */
 public class Utilisateur {
-    private int id ;
+
+    private int id;
     private String username;
     private String email;
     private String password;
-    private Date last_login ;
+    private Date last_login;
+
 
     public Utilisateur() {
     }
@@ -28,8 +30,8 @@ public class Utilisateur {
         this.password = password;
         this.last_login = last_login;
     }
-    
-    public Utilisateur(int id, String username, String password,String email) {
+
+    public Utilisateur(int id, String username, String password, String email) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -75,5 +77,10 @@ public class Utilisateur {
     public void setLast_login(Date last_login) {
         this.last_login = last_login;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" + "id=" + id + ", username=" + username + ", email=" + email + ", password=" + password + ", last_login=" + last_login + '}';
+    }
+
 }

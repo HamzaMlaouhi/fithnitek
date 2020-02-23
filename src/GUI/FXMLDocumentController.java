@@ -7,6 +7,7 @@ package GUI;
 
 import Entities.Livraison;
 import Services.LivraisonService;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,6 +20,7 @@ import javafx.scene.control.Label;
  * @author asus
  */
 public class FXMLDocumentController implements Initializable {
+
 
     @FXML
     private Label label;
@@ -33,6 +35,7 @@ public class FXMLDocumentController implements Initializable {
         LivraisonService LS = new LivraisonService();
         LS.SupprimerLivraison(l);
 
+
     }
 
     @Override
@@ -40,7 +43,4 @@ public class FXMLDocumentController implements Initializable {
     }
         }
     
-        
-    
-
 

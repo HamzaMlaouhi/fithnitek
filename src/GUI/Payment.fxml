@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PaymentController">
+   <children>
+      <Label layoutX="171.0" layoutY="121.0" text="Card Number" />
+      <Label layoutX="171.0" layoutY="151.0" text="Month" />
+      <Label layoutX="171.0" layoutY="182.0" text="Year" />
+      <Label layoutX="172.0" layoutY="213.0" text="VcV" />
+      <TextField fx:id="txtCardNumber" layoutX="251.0" layoutY="117.0" />
+      <TextField fx:id="txtMonth" layoutX="251.0" layoutY="147.0" />
+      <TextField fx:id="txtYear" layoutX="251.0" layoutY="178.0" />
+      <TextField fx:id="txtVcV" layoutX="251.0" layoutY="209.0" />
+      <Label layoutX="220.0" layoutY="14.0" prefHeight="87.0" prefWidth="208.0" text="Add Card detail">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnPay" layoutX="251.0" layoutY="254.0" mnemonicParsing="false" onAction="#payAction" prefHeight="25.0" prefWidth="78.0" text="Add Card" />
+      <Button fx:id="btnCancle" layoutX="335.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Cancle" />
+   </children>
+</AnchorPane>
