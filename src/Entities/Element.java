@@ -16,18 +16,26 @@ public class Element {
     private Double prix ;
     private Float poid ;
     private Categorie[] categories ;
-    private byte image ;
+    private String image ;
     public Element(){
         
     }
 
-    public Element(int id, String name, int quantite, Double prix, Float poid, Categorie[] categories, byte image) {
+    public Element(int id, String name, int quantite, Double prix, Float poid, Categorie[] categories, String image) {
         this.id = id;
         this.name = name;
         this.quantite = quantite;
         this.prix = prix;
         this.poid = poid;
         this.categories = categories ;
+        this.image = image;
+    }
+     public Element(int id, String name, int quantite, Double prix, Float poid, String image) {
+        this.id = id;
+        this.name = name;
+        this.quantite = quantite;
+        this.prix = prix;
+        this.poid = poid;
         this.image = image;
     }
 
@@ -55,7 +63,7 @@ public class Element {
         return categories;
     }
 
-    public byte getImage() {
+    public String getImage() {
         return image;
     }
 
@@ -83,7 +91,7 @@ public class Element {
         this.categories = categories;
     }
 
-    public void setImage(byte image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

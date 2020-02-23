@@ -31,9 +31,7 @@ public class FXMLDocumentController implements Initializable {
 
         label.setText("Hello World!");
 
-        Livraison l = new Livraison(1, "tunis", "saklabet", 10.3, "2020-2-14", 0);
-        LivraisonService LS = new LivraisonService();
-        LS.SupprimerLivraison(l);
+   
 
 
     }

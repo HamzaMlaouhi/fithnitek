@@ -99,5 +99,40 @@ public class ReclamationService implements IReclamationService{
         }
         return reclamationList ;
     }
+        
+    public int CountService(String Service) {
+        int i=0;
+        try {
+            PreparedStatement pt;
+            String query = "select * from reclamation where typereclamation='"+Service+"'";
+            pt=con.prepareStatement(query);
+            ResultSet rs = pt.executeQuery();
+            while(rs.next()){
+                i+=1;
+            }
+        }
+         catch (SQLException ex) {
+            System.out.println("Erreur " + ex.getMessage());
+        }  
+        return i;
+    }
+
+    public List<Reclamation> trier() throws SQLException{
+    List<Reclamation> arr=new ArrayList<>();
+        ste = con.createStatement();
+         String sql="select * from Reclamation order by id desc";
+          ResultSet rs=ste.executeQuery(sql);
+           while (rs.next()) {                
+    int id=rs.getInt(1);
+    String type_rec =rs.getString(2);
+    String msg =rs.getString(3);
+    int id_usr=rs.getInt(4);
+
+    Reclamation s= new Reclamation(id, type_rec, msg, id_usr);
+    arr.add(s);
+     }
+    return arr;   
+    
+    }
 
 }
