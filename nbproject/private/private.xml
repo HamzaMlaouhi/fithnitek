@@ -3,7 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+
+            <file>file:/C:/pi_java/fithnitek/src/GUI/Liste_colisController.java</file>
+            <file>file:/C:/pi_java/fithnitek/src/Services/ColisService.java</file>
+            <file>file:/C:/pi_java/fithnitek/src/GUI/int_ajout_elmt.fxml</file>
+            <file>file:/C:/pi_java/fithnitek/src/GUI/ListViewElements.fxml</file>
+            <file>file:/C:/pi_java/fithnitek/src/Entities/Element.java</file>
+            <file>file:/C:/pi_java/fithnitek/src/Services/ElementService.java</file>
+            <file>file:/C:/pi_java/fithnitek/src/GUI/ListViewElementsController.java</file>
+            <file>file:/C:/pi_java/fithnitek/src/GUI/Int_ajout_colisController.java</file>
+            <file>file:/C:/pi_java/fithnitek/src/GUI/Int_ajout_elmtController.java</file>
+            <file>file:/C:/pi_java/fithnitek/src/GUI/FiThnitek.java</file>
+
             <file>file:/C:/Users/Hamza%20Mlaouhi/Desktop/PI/PIJava/fithnitek/src/Services/UtilisateurService.java</file>
+
         </group>
     </open-files>
 </project-private>

@@ -86,6 +86,12 @@ public class Element {
     public void setImage(byte image) {
         this.image = image;
     }
+
+    @Override
+    public String toString() {
+        return  name ;
+    }
+    
     
     
             }

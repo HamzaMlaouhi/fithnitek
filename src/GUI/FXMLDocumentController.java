@@ -5,8 +5,9 @@
  */
 package GUI;
 
-import Entities.Utilisateur;
-import Services.UtilisateurService;
+import Entities.Livraison;
+import Services.LivraisonService;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,16 +20,22 @@ import javafx.scene.control.Label;
  * @author asus
  */
 public class FXMLDocumentController implements Initializable {
-    
+
+
     @FXML
     private Label label;
-    
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
-        Utilisateur U = new Utilisateur(3, "Mlaouhi", "MLaouhi@gmail.com", "tw aandy");
-        UtilisateurService US = new UtilisateurService();
-       
+
+        label.setText("Hello World!");
+
+        Livraison l = new Livraison(1, "tunis", "saklabet", 10.3, "2020-2-14", 0);
+        LivraisonService LS = new LivraisonService();
+        LS.SupprimerLivraison(l);
+
+
     }
 
     @Override
@@ -36,4 +43,4 @@ public class FXMLDocumentController implements Initializable {
     }
         }
     
-  
+
