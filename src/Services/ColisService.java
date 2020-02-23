@@ -8,6 +8,7 @@ package Services;
 import DataBase.MyDB;
 import Entities.Colis;
 import Entities.Element;
+import Entities.Personne;
 import IServices.IColisService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -120,4 +121,27 @@ public class ColisService implements IColisService{
      }
         return listColis;
     }
-    }
+    
+    public String getColisOwner(int colisID){
+        int idUtilisateur=0;
+        String colisowner ="";
+         try {
+             PreparedStatement pste = con.prepareStatement("Select idUtilisateur from colis where id=?");
+             pste.setInt(1,colisID);
+             ResultSet res = pste.executeQuery();
+             while(res.next()){
+                 idUtilisateur = res.getInt(1);
+             }
+             PreparedStatement pste1 = con.prepareStatement("Select nom,prenom from Personne where idUtilisateur=?");
+             pste1.setInt(1,idUtilisateur);
+             ResultSet res2 = pste1.executeQuery();
+               while(res2.next()){
+                   colisowner = res2.getString(1) + " " + res2.getString(2);
+             }
+         } catch (SQLException ex) {
+             Logger.getLogger(ColisService.class.getName()).log(Level.SEVERE, null, ex);
+         }
+            return colisowner;
+        }
+}
+

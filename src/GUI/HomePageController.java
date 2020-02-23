@@ -6,6 +6,7 @@
 package GUI;
 
 import Entities.Colis;
+import Entities.Personne;
 import Services.ColisService;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -22,6 +23,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -33,6 +36,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
   
 
@@ -64,36 +68,43 @@ public class HomePageController implements Initializable {
     listColis = cs.AfficherColis();
         for(Colis c : listColis){
             VBox pane =  new VBox();
-            pane.setSpacing(10);
-            pane.setPadding(new Insets(50,50,50,50));
+            HBox lkbir = new HBox();
+            VBox img = new VBox();
+            VBox fromto = new VBox();
+            VBox felsa = new VBox();
+            pane.setPrefSize(600,300);
+            fromto.setSpacing(10);
+            felsa.setAlignment(Pos.CENTER);
+            fromto.setAlignment(Pos.CENTER);
+            int buttonSize = 70; 
             Button btn = new Button("Send Request");
+            btn.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+            fromto.setLayoutX(50);
             if("".equals(c.getImage())){
                Image image = new Image("/Images/sana.jpg");
             }else{
             Image image = new Image("/Images/"+c.getImage());
             ImageView imgV = new ImageView(image);
             imgV.setFitHeight(100);
-            imgV.setFitWidth(100);
+            imgV.setFitWidth(100); 
             Label nameLabel = new Label("Package :"+c.getLabel());
-            Label fromLabel = new Label("From :"+c.getDepart());
-            Label toLabel = new Label("To :"+c.getDestination());
+            nameLabel.setMinSize(Label.USE_PREF_SIZE, Label.USE_PREF_SIZE);
+            Label fromtoLabel = new Label ("From : "+c.getDepart()+" -> "+"To : "+c.getDestination());
+            fromtoLabel.setMinSize(Label.USE_PREF_SIZE, Label.USE_PREF_SIZE);
             Label dateLabel = new Label("Befor :"+c.getDate_limit());
-
-            pane.getChildren().addAll(imgV,nameLabel,fromLabel,toLabel,dateLabel,btn);
-             PaneList.add(pane);
+            dateLabel.setMinSize(Label.USE_PREF_SIZE, Label.USE_PREF_SIZE);
+            Label wazn = new Label(cs.getColisOwner(c.getId()));
+            wazn.setMinSize(Label.USE_PREF_SIZE, Label.USE_PREF_SIZE);
+            lkbir.setSpacing(30);
+            pane.setMaxHeight(30);
+            img.getChildren().addAll(imgV,wazn);
+            fromto.getChildren().addAll(nameLabel,fromtoLabel,dateLabel);
+            felsa.getChildren().add(btn);
+            lkbir.getChildren().addAll(img,fromto,felsa);
+            pane.getChildren().add(lkbir);
+            PaneList.add(pane);       
             }
-        }
-        
-               
-         ScrollLyout.getChildren().addAll(PaneList);
-
-       // Button btn = new Button("hello");
-         //
-        // gridLayout.getChildren().add(btn);
-       // 
-      //  for (Colis c : listColis) {
-           // gridLayout.getChildren().add(new Button("test"));
-    //}    
-
+        } 
+         ScrollLyout.getChildren().addAll(PaneList);  
     }
 }
