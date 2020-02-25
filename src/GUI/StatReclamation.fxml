@@ -18,9 +18,9 @@
             <PieChart fx:id="pie" layoutX="97.0" layoutY="70.0" prefHeight="321.0" prefWidth="442.0" />
          </children>
       </AnchorPane>
-      <Button fx:id="btnAjout" layoutX="7.0" layoutY="25.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Ajouter Reclamation" textFill="WHITE" />
-      <Button fx:id="btnListe" layoutX="170.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Liste des Reclamations" textFill="WHITE" />
-      <Button fx:id="btnstat" layoutX="327.0" layoutY="26.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Statistique Reclamations" textFill="WHITE" />
-      <Button fx:id="btnMail" layoutX="484.0" layoutY="26.0" mnemonicParsing="false" onAction="#RependreParMail" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #990000;" text="Rependre par Email" textFill="WHITE" />
+      <Button fx:id="btnAjout" layoutX="11.0" layoutY="25.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #990000;" text="Ajouter Reclamation" textFill="WHITE" />
+      <Button fx:id="btnListe" layoutX="146.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="203.0" style="-fx-background-color: #990000;" text="Liste des Reclamations non traitees" textFill="WHITE" />
+      <Button fx:id="btnstat" layoutX="513.0" layoutY="25.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #990000;" text="Statistique " textFill="WHITE" />
+      <Button fx:id="btnlistetraitees" layoutX="349.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamationTratiees" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: #990000;" text="Liste des reclamations traitees" textFill="WHITE" />
    </children>
 </AnchorPane>

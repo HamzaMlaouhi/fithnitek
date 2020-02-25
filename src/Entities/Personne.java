@@ -6,6 +6,7 @@
 package Entities;
 
 import java.util.Date;
+import javafx.scene.control.ComboBox;
 
 /**
  *
@@ -86,6 +87,10 @@ public class Personne extends Utilisateur {
     @Override
     public String toString() {
         return "Personne{" + super.toString() + "sexe=" + sexe + ", nom=" + nom + ", prenom=" + prenom + ", image=" + image + ", cin=" + cin + ", num_tel=" + num_tel + '}';
+    }
+
+    public void setSexe(ComboBox<String> ZoneSexe) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

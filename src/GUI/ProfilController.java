@@ -5,21 +5,27 @@
  */
 package GUI;
 
+import Entities.Colis;
 import Entities.Personne;
-import Entities.Utilisateur;
+import Services.ColisService;
 import Services.UtilisateurService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -40,24 +46,64 @@ public class ProfilController implements Initializable {
     private ImageView ProfImage;
     @FXML
     private Button btnLogOut;
+    @FXML
+    private Button livBtn;
 
     /**
      * Initializes the controller class.
+     *
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        UtilisateurService us = new UtilisateurService();
+        ColisService cs = new ColisService();
+        if (us.checkNotification()) {
+
+            Notifications notificationBuilder = Notifications.create()
+                    .title("You've got a new notification")
+                    .text("Someone Wants your service")
+                    .graphic(null)
+                    .hideAfter(Duration.seconds(5))
+                    .position(Pos.TOP_LEFT)
+                    .onAction((event) -> {
+                try {
+                    //us.deleteNotification();
+                    Colis c = cs.getColisNotification();
+                    FXMLLoader loader = new FXMLLoader(getClass()
+                            .getResource("detailsColis.fxml"));
+                    
+                    Parent root = loader.load();
+                    DetailsColisController dcc = loader.getController();
+                    dcc.setC(c);
+                    livBtn.getScene().setRoot(root);
+                } catch (IOException ex) {
+                    Logger.getLogger(ProfilController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                    });
+            notificationBuilder.showConfirm();
+        }
+
         txtFull_name.setText(Personne.user.getNom() + " " + Personne.user.getPrenom());
         txtEmail.setText(Personne.user.getEmail());
         txtTelNum.setText(Integer.toString(Personne.user.getNum_tel()));
-        
-        Image image = new Image("/Images/avatardefault_92824.png");
-        ProfImage.setImage(image);
+
+        String imageName = us.getImageName();
+        try {
+            Image image = new Image("/Images/Profil/" + imageName);
+            ProfImage.setImage(image);
+        } catch (Exception ex) {
+            ex.getMessage();
+        }
+
     }
 
     @FXML
     private void SettingAction(ActionEvent event) throws IOException {
-    
-    FXMLLoader loader = new FXMLLoader(getClass()
+
+        FXMLLoader loader = new FXMLLoader(getClass()
                 .getResource("SettingInterface.fxml"));
 
         Parent root = loader.load();
@@ -66,12 +112,40 @@ public class ProfilController implements Initializable {
     }
 
     @FXML
-    private void LogOutAction(ActionEvent event) throws IOException  {
-         FXMLLoader loader = new FXMLLoader(getClass()
+    private void LogOutAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass()
                 .getResource("LogIn.fxml"));
 
         Parent root = loader.load();
         LogInController apc = loader.getController();
         btnLogOut.getScene().setRoot(root);
+    }
+
+    private void GoToLivraisonManagment(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass()
+                    .getResource("HomePage.fxml"));
+
+            Parent root = loader.load();
+            HomePageController apc = loader.getController();
+            btnLogOut.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ProfilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void goToLivraison(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass()
+                    .getResource("HomePage.fxml"));
+
+            Parent root = loader.load();
+            HomePageController apc = loader.getController();
+            btnLogOut.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ProfilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 }

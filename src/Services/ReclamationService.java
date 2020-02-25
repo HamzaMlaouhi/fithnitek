@@ -12,6 +12,8 @@ import IServices.IReclamationService;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,7 +30,7 @@ public class ReclamationService implements IReclamationService{
     public ReclamationService(){
         con = MyDB.getInstance().getConnection();
     }
-
+    
 
     @Override
     public void ajouterReclamation(Reclamation r)  {
@@ -38,7 +40,7 @@ public class ReclamationService implements IReclamationService{
 
             ste = con.createStatement();
 
-            String requeteInsert = "INSERT INTO reclamation(id, typereclamation, message, idutilisateur ) VALUES ('"+r.getId()+"','"+r.getTypereclamation()+"','"+r.getMessage()+"','"+r.getIdutilisateur()+"')";
+            String requeteInsert = "INSERT INTO reclamation(id, nom, typereclamation, message, idutilisateur, etat ) VALUES ('"+r.getId()+"','"+r.getNom()+"','"+r.getTypereclamation()+"','"+r.getMessage()+"','"+r.getIdutilisateur()+"','"+r.getEtat()+"')";
             ste.executeUpdate(requeteInsert);
 
         } catch (SQLException ex) {
@@ -47,18 +49,29 @@ public class ReclamationService implements IReclamationService{
     }
 
     @Override
-    public void supprimerReclamation(Reclamation r)  {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void supprimerReclamation(int id)  {
+         try {
+            PreparedStatement pt = con.prepareStatement("delete from reclamation where id=?");
+            pt.setInt(1, id);
+            pt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(ReclamationService.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        try {
+
+
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+       /* try {
 
             ste = con.createStatement();
 
-            String requeteSupprime = "DELETE FROM reclamation WHERE id ="+r.getId();
+            String requeteSupprime = "delete from reclamation where id=?";
             ste.executeUpdate(requeteSupprime);
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
-        }
+        }*/
+        
     }
 
     @Override
@@ -86,11 +99,11 @@ public class ReclamationService implements IReclamationService{
         try{
             ste = con.createStatement();
 
-            String query = "SELECT * FROM reclamation";
+            String query = "SELECT * FROM reclamation WHERE etat=0";
             ResultSet rstl = ste.executeQuery(query);
 
             while (rstl.next()){
-                reclamation = new Reclamation(Integer.parseInt(rstl.getString(1)), rstl.getString(2), rstl.getString(3), Integer.parseInt(rstl.getString(4)));
+                reclamation = new Reclamation(Integer.parseInt(rstl.getString(1)), rstl.getString(2), rstl.getString(3), rstl.getString(4), Integer.parseInt(rstl.getString(5)), Integer.parseInt(rstl.getString(6)));
                 reclamationList.add(reclamation);
             }
 
@@ -99,5 +112,79 @@ public class ReclamationService implements IReclamationService{
         }
         return reclamationList ;
     }
+        
+    @Override
+    public int CountService(String Service) {
+        int i=0;
+        try {
+            PreparedStatement pt;
+            String query = "select * from reclamation where typereclamation='"+Service+"'";
+            pt=con.prepareStatement(query);
+            ResultSet rs = pt.executeQuery();
+            while(rs.next()){
+                i+=1;
+            }
+        }
+         catch (SQLException ex) {
+            System.out.println("Erreur " + ex.getMessage());
+        }  
+        return i;
+    }
 
+    @Override
+    public List<Reclamation> trier() throws SQLException{
+    List<Reclamation> arr=new ArrayList<>();
+        ste = con.createStatement();
+         String sql="select * from Reclamation order by id desc";
+          ResultSet rs=ste.executeQuery(sql);
+           while (rs.next()) {                
+    int id=rs.getInt(1);
+    String type_rec =rs.getString(2);
+    String msg =rs.getString(3);
+    int id_usr=rs.getInt(4);
+
+    Reclamation s= new Reclamation(id, type_rec, msg, id_usr);
+    arr.add(s);
+     }
+    return arr;   
+    
+    }
+    
+    @Override
+    public void EnableEtat(Reclamation r) {
+        try {
+            PreparedStatement pt;
+            String query = "update reclamation set etat=? where id='"+r.getId()+"'";
+            System.out.println("..");
+            pt=con.prepareStatement(query);
+            pt.setInt(1,1);
+            pt.executeUpdate();
+            System.out.println("Mise à jour effectuée avec succès");
+        }
+        catch (SQLException ex) {
+            System.out.println("erreur lors de la mise à jour del'etat de l'evenement " + ex.getMessage());
+        }     
+    }
+    
+    @Override
+    public List<Reclamation> ListerReclamation (){
+
+        Reclamation reclamation = null;
+        try{
+            ste = con.createStatement();
+
+            String query = "SELECT * FROM reclamation WHERE etat=1";
+            ResultSet rstl = ste.executeQuery(query);
+
+            while (rstl.next()){
+                reclamation = new Reclamation(Integer.parseInt(rstl.getString(1)), rstl.getString(2), rstl.getString(3), rstl.getString(4), Integer.parseInt(rstl.getString(5)), Integer.parseInt(rstl.getString(6)));
+                reclamationList.add(reclamation);
+            }
+
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return reclamationList ;
+    }
+    
 }

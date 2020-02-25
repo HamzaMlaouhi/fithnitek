@@ -7,6 +7,7 @@ package Services;
 
 import DataBase.MyDB;
 import Entities.Colis;
+import Entities.Personne;
 import IServices.ICustomerService;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
@@ -118,7 +119,7 @@ public class CustomerService implements ICustomerService{
             try {
             String sql = "SELECT id From Customer where email=?";
             ste = con.prepareStatement(sql);
-            //ste.setString(1,UtilisateurService.currentUser.getEmail());
+            ste.setString(1,Personne.user.getEmail());
             ResultSet result = ste.executeQuery();
             while(result.next())
                 customerId = result.getString("id");

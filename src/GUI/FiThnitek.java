@@ -20,13 +20,7 @@ public class FiThnitek extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-<<<<<<< HEAD
-        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-       // stage.initStyle(StageStyle.UNDECORATED);
-=======
         Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
-        stage.initStyle(StageStyle.UNDECORATED);
->>>>>>> d8e4ff506f784431a3e9ad29ef6023eea8e1ec49
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

@@ -52,7 +52,9 @@ public class ReclamationUIController implements Initializable {
     @FXML
     private Button btnAnnuler;
     @FXML
-    private Button btnMail;
+    private TextField nom;
+    @FXML
+    private Button btnlistetraitees;
 
     /**
      * Initializes the controller class.
@@ -68,12 +70,14 @@ public class ReclamationUIController implements Initializable {
         if(!"".equals(txtMsgRec.getText())){
             ReclamationService sp = new ReclamationService();
             Reclamation r=new Reclamation();
+            r.setNom(nom.getText());
             r.setTypereclamation(cbTypeRec.getValue());
             r.setMessage(txtMsgRec.getText());
-            //r.setId(8);
             r.setIdutilisateur(1);
+            r.setEtat(0);
             sp.ajouterReclamation(r);
             
+            nom.clear();
             txtMsgRec.clear();
         }else {
             Alert alert = new Alert(AlertType.INFORMATION);
@@ -87,6 +91,7 @@ public class ReclamationUIController implements Initializable {
 
     @FXML
     private void AnnulerReclamation(ActionEvent event) {
+        nom.clear();
         txtMsgRec.clear();
     }
 
@@ -120,16 +125,14 @@ public class ReclamationUIController implements Initializable {
     }
 
     @FXML
-    private void RependreParMail(ActionEvent event) throws IOException {
+    private void ListerReclamationTratiees(ActionEvent event) throws IOException {
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("RepondreReclamation.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ListRecTraitees.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Stat Reclamation !");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
-
 
     
 }

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -16,17 +17,19 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextArea fx:id="txtMsgRec" layoutX="177.0" layoutY="148.0" prefHeight="143.0" prefWidth="299.0" />
-            <Label layoutX="48.0" layoutY="155.0" text="Message" />
-            <Label layoutX="48.0" layoutY="104.0" text="Type du reclamation " />
-            <ComboBox fx:id="cbTypeRec" layoutX="177.0" layoutY="102.0" prefHeight="25.0" prefWidth="188.0" />
+            <TextArea fx:id="txtMsgRec" layoutX="177.0" layoutY="188.0" prefHeight="143.0" prefWidth="299.0" />
+            <Label layoutX="48.0" layoutY="188.0" text="Message" />
+            <Label layoutX="48.0" layoutY="145.0" text="Type du reclamation " />
+            <ComboBox fx:id="cbTypeRec" layoutX="177.0" layoutY="141.0" prefHeight="25.0" prefWidth="188.0" />
             <Button fx:id="btnEnv" layoutX="535.0" layoutY="391.0" mnemonicParsing="false" onAction="#envoyerReclamation" style="-fx-background-color: #990000;" text="Envoyer" textFill="#f2f2f2" />
             <Button fx:id="btnAnnuler" layoutX="450.0" layoutY="391.0" mnemonicParsing="false" onAction="#AnnulerReclamation" style="-fx-background-color: #990000;" text="Annuler" textFill="WHITE" />
+            <Label layoutX="44.0" layoutY="104.0" text="Nom et Prenom" />
+            <TextField fx:id="nom" layoutX="177.0" layoutY="100.0" prefHeight="25.0" prefWidth="188.0" />
          </children>
       </AnchorPane>
-      <Button fx:id="btnAjout" layoutX="7.0" layoutY="25.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Ajouter Reclamation" textFill="WHITE" />
-      <Button fx:id="btnListe" layoutX="170.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Liste des Reclamations" textFill="WHITE" />
-      <Button fx:id="btnstat" layoutX="339.0" layoutY="25.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Statistique Reclamations" textFill="WHITE" />
-      <Button fx:id="btnMail" layoutX="491.0" layoutY="25.0" mnemonicParsing="false" onAction="#RependreParMail" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: #990000;" text="Rependre par Email" textFill="WHITE" />
+      <Button fx:id="btnAjout" layoutX="7.0" layoutY="25.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #990000;" text="Ajouter Reclamation" textFill="WHITE" />
+      <Button fx:id="btnListe" layoutX="142.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="203.0" style="-fx-background-color: #990000;" text="Liste des Reclamations non traitees" textFill="WHITE" />
+      <Button fx:id="btnstat" layoutX="506.0" layoutY="25.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #990000;" text="Statistique " textFill="WHITE" />
+      <Button fx:id="btnlistetraitees" layoutX="345.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamationTratiees" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: #990000;" text="Liste des reclamations traitees" textFill="WHITE" />
    </children>
 </AnchorPane>

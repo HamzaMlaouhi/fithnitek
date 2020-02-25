@@ -17,13 +17,22 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import Entities.Utilisateur;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javax.imageio.ImageIO;
 
 /**
  * FXML Controller class
@@ -45,7 +54,7 @@ public class SignInController implements Initializable {
     @FXML
     private TextField txtPhoneNumber;
     @FXML
-    private ComboBox<?> ZoneSexe;
+    private ComboBox<String> ZoneSexe;
     @FXML
     private PasswordField txtPassword;
     @FXML
@@ -70,14 +79,51 @@ public class SignInController implements Initializable {
     private Label FailPhoneNum;
     @FXML
     private ImageView ImageFi;
+    @FXML
+    private ImageView imageview;
+
+    String fileName;
+    Image image;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Image image = new Image("/Images/fi-thnitek.png");
+        image = new Image("/Images/fi-thnitek.png");
         ImageFi.setImage(image);
+
+        imageview.addEventHandler(javafx.scene.input.MouseEvent.MOUSE_CLICKED, event -> {
+            System.out.println("Tile pressed ");
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Open Resource File");
+            File file = fileChooser.showOpenDialog(null);
+            String path = "file:\\" + file.getPath();
+            fileName = file.getName();
+            if (file != null) {
+                image = new Image(path);
+                imageview.setImage(image);
+                BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
+                File outputfile = new File("C:\\Users\\yassine bayoudh\\Desktop\\Projets PI\\fithnitek\\src\\Images\\Profil\\" + file.getName());
+                try {
+                    ImageIO.write(bImage, "jpg", outputfile);
+                } catch (IOException ex) {
+                    Logger.getLogger(SignInController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            event.consume();
+        });
+        ObservableList<String> options
+                = FXCollections.observableArrayList(
+                        
+                );
+        
+        ZoneSexe.getItems().addAll(
+        "Male",
+        "Female"
+        
+);
+
     }
 
     @FXML
@@ -110,8 +156,10 @@ public class SignInController implements Initializable {
             user.setEmail(txtEmail.getText());
             user.setPassword(txtPassword.getText());
 
+            P.setImage(fileName);
             P.setPrenom(txtLastName.getText());
             P.setNom(txtName.getText());
+            P.setSexe(ZoneSexe.getSelectionModel().getSelectedItem());
             int jml = Integer.parseInt(txtPhoneNumber.getText());
             P.setNum_tel(jml);
             int cci = Integer.parseInt(txtCIN.getText());

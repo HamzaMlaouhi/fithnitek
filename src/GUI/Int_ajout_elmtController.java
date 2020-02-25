@@ -115,6 +115,16 @@ public class Int_ajout_elmtController implements Initializable {
        elmt.setPrix(Double.parseDouble(prix.getText()));
        elmt.setPoid(Float.parseFloat(poid.getText()));
        elmts.AjouterElemnet(elmt);
+       try {
+            Parent view3 = FXMLLoader.load(getClass().getResource("int_ajout_colis.fxml"));
+            Scene scene2 =new Scene(view3);
+            Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            window.setTitle("Ajouter Colis");
+            window.setScene(scene2);
+            window.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } 
        
    }
     @Override

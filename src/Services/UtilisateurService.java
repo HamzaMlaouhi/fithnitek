@@ -49,7 +49,7 @@ public class UtilisateurService implements IUtilisateurService {
 
         try {
             PreparedStatement psteID = con.prepareStatement("SELECT id FROM fos_user WHERE email =?");
-            PreparedStatement pste = con.prepareStatement("INSERT INTO personne (idutilisateur,cin,nom,prenom,NumTel) VALUES (?,?,?,?,?);");
+            PreparedStatement pste = con.prepareStatement("INSERT INTO personne (idutilisateur,cin,nom,prenom,NumTel,sexe,image) VALUES (?,?,?,?,?,?,?);");
 
             psteID.setString(1, u.getEmail());
             ResultSet res = psteID.executeQuery();
@@ -62,6 +62,9 @@ public class UtilisateurService implements IUtilisateurService {
             pste.setString(3, p.getNom());
             pste.setString(4, p.getPrenom());
             pste.setInt(5, p.getNum_tel());
+            pste.setString(6, p.getSexe());
+            pste.setString(7, p.getImage());
+
 
             pste.executeUpdate();
 
@@ -72,19 +75,7 @@ public class UtilisateurService implements IUtilisateurService {
 
     @Override
     public void ModifierUtilisateur(Utilisateur u, Personne p) {
-//        try {
-//            String sql = "UPDATE fos_user SET username=? ,email=?  WHERE id=?";
-//
-//            PreparedStatement ste = con.prepareStatement(sql);
-//            
-//            ste.setString(1, u.getUsername());
-//            ste.setString(2, u.getEmail());
-//            ste.setInt(3, u.getId());
-//
-//            ste.executeUpdate();
-//        } catch (SQLException ex) {
-//            ex.getMessage();
-//        }
+//        
         try {
             String sqlU = "UPDATE fos_user SET username=? ,email=?  WHERE id=?";
             String sqlP = "UPDATE personne SET nom=? ,prenom=?  WHERE idutilisateur =?";
@@ -164,4 +155,51 @@ public class UtilisateurService implements IUtilisateurService {
         return false;
 
     }
+    
+    public String getImageName(){
+            String imageName="";
+        try {
+                        ste = con.createStatement();
+            ResultSet rs = ste.executeQuery("Select image from  personne where idutilisateur="+Personne.user.getId());
+            while(rs.next()){
+                imageName=rs.getString("image");
+            }   
+        } catch (SQLException ex) {
+            Logger.getLogger(UtilisateurService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                    return imageName;
+
+    }
+    
+    
+    public boolean checkNotification(){
+         boolean verif=false;
+        try {
+           ste = con.createStatement();
+            ResultSet rs = ste.executeQuery("Select * from notifications where idLivreur="+Personne.user.getId());
+             verif = rs.next();
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(UtilisateurService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return verif;
+    }
+    
+    public void deleteNotification(){
+         try {
+            String sqlU = "DELETE FROM notifications WHERE idLivreur ="+Personne.user.getId();
+            PreparedStatement stee = con.prepareStatement(sqlU);
+            stee.executeUpdate();
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
 }

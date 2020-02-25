@@ -14,24 +14,23 @@ import java.util.Date;
 public class Livraison {
 
     private int id;
+    private int idPersonne;
     private String depart;
     private String destination;
-    private float poid_disponible;
-    private Date temp_estime;
+    private double poid_disponible;
+    private String temp_estime;
     private Colis[] colis;
     private int note_livraison;
 
     public Livraison() {
     }
 
-    public Livraison(int id, String depart, String destination, float poid_disponible, Date temp_estime, Colis[] colis, int note_livraison) {
+    public Livraison(int id, String depart, String destination, double poid_disponible, String temp_estime) {
         this.id = id;
         this.depart = depart;
         this.destination = destination;
         this.poid_disponible = poid_disponible;
         this.temp_estime = temp_estime;
-        this.colis = colis;
-        this.note_livraison = note_livraison;
     }
 
     public int getId() {
@@ -46,11 +45,19 @@ public class Livraison {
         return destination;
     }
 
-    public float getPoid_disponible() {
+    public int getIdPersonne() {
+        return idPersonne;
+    }
+
+    public void setIdPersonne(int idPersonne) {
+        this.idPersonne = idPersonne;
+    }
+
+    public double getPoid_disponible() {
         return poid_disponible;
     }
 
-    public Date getTemp_estime() {
+    public String getTemp_estime() {
         return temp_estime;
     }
 
@@ -74,11 +81,11 @@ public class Livraison {
         this.destination = destination;
     }
 
-    public void setPoid_disponible(float poid_disponible) {
+    public void setPoid_disponible(double poid_disponible) {
         this.poid_disponible = poid_disponible;
     }
 
-    public void setTemp_estime(Date temp_estime) {
+    public void setTemp_estime(String temp_estime) {
         this.temp_estime = temp_estime;
     }
 
@@ -88,6 +95,11 @@ public class Livraison {
 
     public void setNote_livraison(int note_livraison) {
         this.note_livraison = note_livraison;
+    }
+
+    @Override
+    public String toString() {
+        return "Livraison{" + "id=" + id + ", depart=" + depart + ", destination=" + destination + ", poid_disponible=" + poid_disponible + ", temp_estime=" + temp_estime + ", colis=" + colis + ", note_livraison=" + note_livraison + '}';
     }
 
 }

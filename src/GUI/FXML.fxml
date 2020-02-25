@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="formVoyage" prefHeight="400.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLController">
+   <children>
+      <Label layoutX="51.0" layoutY="87.0" prefHeight="18.0" prefWidth="111.0" text="Depart " />
+      <Label layoutX="51.0" layoutY="132.0" prefHeight="18.0" prefWidth="98.0" text="Destination" />
+      <Label layoutX="51.0" layoutY="174.0" prefHeight="18.0" prefWidth="122.0" text="Poids disponible" />
+      <Label layoutX="51.0" layoutY="219.0" prefHeight="18.0" prefWidth="122.0" text="Temps de depart" />
+      <Button fx:id="btnAjoutVoyage" layoutX="203.0" layoutY="293.0" mnemonicParsing="false" onAction="#ajouterVoyage" prefHeight="36.0" prefWidth="90.0" text="AJOUTER" />
+      <TextField fx:id="txtDepart" layoutX="288.0" layoutY="83.0" />
+      <TextField fx:id="txtDest" layoutX="288.0" layoutY="128.0" />
+      <TextField fx:id="txtPoids" layoutX="289.0" layoutY="170.0" onKeyPressed="#VerifierNumber" />
+      <TextField fx:id="txtTempsDepart" layoutX="288.0" layoutY="215.0" prefHeight="26.0" prefWidth="149.0" />
+      <Label layoutX="211.0" layoutY="27.0" prefHeight="26.0" prefWidth="73.0" text="LIVRAISON">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date" layoutX="264.0" layoutY="252.0" />
+   </children>
+</AnchorPane>

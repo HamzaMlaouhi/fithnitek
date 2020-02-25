@@ -23,5 +23,6 @@
          </font></Label>
       <Button fx:id="btnSetting" layoutX="301.0" layoutY="342.0" mnemonicParsing="false" onAction="#SettingAction" prefHeight="37.0" prefWidth="119.0" style="-fx-background-color: #0598ff;" text="Setting" textFill="WHITE" />
       <Button fx:id="btnLogOut" layoutX="160.0" layoutY="342.0" mnemonicParsing="false" onAction="#LogOutAction" prefHeight="37.0" prefWidth="119.0" style="-fx-background-color: #0598ff;" text="Log Out" textFill="WHITE" />
+      <Button fx:id="livBtn" layoutX="46.0" layoutY="68.0" mnemonicParsing="false" onAction="#goToLivraison" text="Button" />
    </children>
 </AnchorPane>

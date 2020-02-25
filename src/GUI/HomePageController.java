@@ -6,9 +6,7 @@
 package GUI;
 
 import Entities.Colis;
-import Entities.Personne;
 import Services.ColisService;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,21 +20,22 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import javax.management.Notification;
+import org.controlsfx.control.Notifications;
 
   
 
@@ -64,6 +63,8 @@ public class HomePageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
     ColisService cs = new ColisService();
     listColis = cs.AfficherColis();
         for(Colis c : listColis){
@@ -79,6 +80,39 @@ public class HomePageController implements Initializable {
             int buttonSize = 70; 
             Button btn = new Button("Send Request");
             btn.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+            
+            //Button Event
+            btn.addEventHandler(MouseEvent.MOUSE_CLICKED, (e)->{
+                
+                
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("ListAll.fxml"));
+                    Parent root = loader.load();
+                    ListAllController lac = loader.getController();
+                    lac.setColis(c);
+                    Scene scene2 = new Scene(root);
+                    Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            //Stage window = new Stage();
+                        window.setTitle("Ajout Colis");
+                        window.setScene(scene2);
+                        window.show();
+
+                    
+                    
+//               Notifications notificationBuilder = Notifications.create()
+//                        .title("You've got a new notification")
+//                        .text("Someone Wants your service")
+//                        .graphic(null)
+//                        .hideAfter(Duration.seconds(5))
+//                        .position(Pos.TOP_LEFT)
+//                        .onAction((event)->{
+//                            System.out.println("qsd");
+//                        });
+//                notificationBuilder.showConfirm();
+                } catch (IOException ex) {
+                    Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                        });
             fromto.setLayoutX(50);
             if("".equals(c.getImage())){
                Image image = new Image("/Images/sana.jpg");

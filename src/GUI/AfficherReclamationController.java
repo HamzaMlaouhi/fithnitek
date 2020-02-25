@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,12 +44,11 @@ public class AfficherReclamationController implements Initializable {
     @FXML
     private TableView<Reclamation> ListRec;
     @FXML
-    private TableColumn<Reclamation, Integer> Id;
+    private TableColumn<Reclamation, String> nom;
     @FXML
     private TableColumn<Reclamation, String> typereclamation;
     @FXML
     private TableColumn<Reclamation, String> message;
-    @FXML
     private TableColumn<Reclamation, Integer> idutilisateur;
     @FXML
     private Button btnsupp;
@@ -59,13 +60,16 @@ public class AfficherReclamationController implements Initializable {
     private Button btnListe;
     @FXML
     private Button btnstat;
+    @FXML
+    private Button btntraiter;
     
     ObservableList<Entities.Reclamation> data;
     ReclamationService rs = new ReclamationService();
     Entities.Reclamation r = new Entities.Reclamation();
     List<Reclamation> ls;
     @FXML
-    private Button btnMail;
+    private Button btnlistetraitees;
+    
 
     /**
      * Initializes the controller class.
@@ -82,20 +86,19 @@ public class AfficherReclamationController implements Initializable {
         data = FXCollections.observableArrayList();
         if(!ls.isEmpty())
         ls.stream().forEach((j) -> {
-                data.add(new Reclamation(j.getId(),j.getTypereclamation(),j.getMessage(),j.getIdutilisateur()));
+                data.add(new Reclamation(j.getId(),j.getNom(),j.getTypereclamation(),j.getMessage(),j.getIdutilisateur(),j.getEtat()));
                 ListRec.setItems(data);
         });
       
-        Id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         typereclamation.setCellValueFactory(new PropertyValueFactory<>("typereclamation"));
         message.setCellValueFactory(new PropertyValueFactory<>("message"));
-        idutilisateur.setCellValueFactory(new PropertyValueFactory<>("idutilisateur"));
        
     }
     @FXML
     private void SupprimerReclamation(ActionEvent event) {
         Reclamation r = ListRec.getSelectionModel().getSelectedItem();
-        rs.supprimerReclamation(r);
+        rs.supprimerReclamation(r.getId());
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
         alert.setHeaderText("Look, a Confirmation Dialog");
@@ -173,9 +176,31 @@ public class AfficherReclamationController implements Initializable {
     }
 
     @FXML
-    private void RependreParMail(ActionEvent event) throws IOException {
+    private void TraiterReclamation(ActionEvent event) throws IOException {
+        ObservableList<Reclamation> r,f;
+        f=ListRec.getItems();
+        r=ListRec.getSelectionModel().getSelectedItems();
+        ReclamationService rs=new ReclamationService();
+        if(r!=null){
+        r.stream().map((A) -> {
+            rs.EnableEtat(A);
+            return A;
+        }).forEach((A) -> {
+            f.remove(A);
+        });
+        }
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("RependreParMail.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("RepondreReclamation.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Traiter Reclamation !");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    @FXML
+    private void ListerReclamationTratiees(ActionEvent event) throws IOException {
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("ListRecTraitees.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Stat Reclamation !");
         primaryStage.setScene(scene);

@@ -48,36 +48,37 @@ public class LogInController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         Image image = new Image("/Images/fi-thnitek.png");
         LogoViewID.setImage(image);
-        
-    }
+
+        }
 
     @FXML
     private void loginAction(ActionEvent event) throws IOException {
-       if("SuperuseR".equals(txtLogIn.getText())&& ("SuperuseR".equals(txtPassWord.getText()))){
-          
-           FXMLLoader loader = new FXMLLoader(getClass()
+        if ("SuperuseR".equals(txtLogIn.getText()) && ("SuperuseR".equals(txtPassWord.getText()))) {
+
+            FXMLLoader loader = new FXMLLoader(getClass()
                     .getResource("AdminInterface.fxml"));
 
             Parent root = loader.load();
             AdminInterfaceController apc = loader.getController();
             btnLogIn.getScene().setRoot(root);
-       }
-       else
-       {
-        
-        UtilisateurService us = new UtilisateurService();
-        boolean success = us.Log_in(txtLogIn.getText(), txtPassWord.getText());
-        if (success) {
+        } else {
 
-            FXMLLoader loader = new FXMLLoader(getClass()
-                    .getResource("Profil.fxml"));
+            UtilisateurService us = new UtilisateurService();
+            boolean success = us.Log_in(txtLogIn.getText(), txtPassWord.getText());
+            
+            if (success) {
 
-            Parent root = loader.load();
-            ProfilController apc = loader.getController();
-            btnLogIn.getScene().setRoot(root);
+                FXMLLoader loader = new FXMLLoader(getClass()
+                        .getResource("Profil.fxml"));
 
+                Parent root = loader.load();
+                ProfilController apc = loader.getController();
+                btnLogIn.getScene().setRoot(root);
+
+            }else {
+                System.out.println("test error");
+            }
         }
-       }
     }
 
     @FXML
@@ -96,7 +97,7 @@ public class LogInController implements Initializable {
 
     @FXML
     private void ForgetPassAction(ActionEvent event) {
-    
+
     }
 
 }

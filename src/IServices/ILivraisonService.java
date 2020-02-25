@@ -13,9 +13,12 @@ import java.util.List;
  * @author HP
  */
 public interface ILivraisonService {
-   public void AjouterColis(Livraison l);
-   public void ModifierColis(Livraison l);
-   public void SupprimerColis(Livraison l);
+   public void AjouterLivraison(Livraison l);
+   public void ModifierLivraison(Livraison l);
+   public void SupprimerLivraison(Livraison l);
    public List<Livraison> AfficherLivraison();
+   public List<Livraison> AfficherLivraisonPerson(int idP);
+   public List<Livraison> RechercherLivraison(String depart, String dest);
+   public List<Livraison> RechercherLivraisonId(int id);
     
 }

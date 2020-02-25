@@ -14,7 +14,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -99,6 +98,8 @@ public class Int_ajout_colisController implements Initializable {
     private ImageView imageViewID;
     
     String fileName;
+    @FXML
+    private Button btnAddItems;
 
 
     public void colis(ActionEvent e){ 
@@ -126,6 +127,7 @@ public class Int_ajout_colisController implements Initializable {
         }
         else{
         Colis c = new Colis();
+        ColisService cs = new ColisService();
         c.setDepart(from.getText());
         c.setDestination(to.getText());
         c.setDate_limit(befdate.getText());
@@ -183,7 +185,7 @@ public class Int_ajout_colisController implements Initializable {
         Image image = new Image(path);
         imageViewID.setImage(image);
         BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
-        File outputfile = new File("C:/pi_java/fithnitek/src/Images/"+file.getName());
+        File outputfile = new File("C:\\Users\\yassine bayoudh\\Desktop\\Projets PI\\fithnitek\\src\\Images\\"+file.getName());
              try {
                  ImageIO.write(bImage, "jpg", outputfile);
              } catch (IOException ex) {
@@ -244,6 +246,21 @@ public class Int_ajout_colisController implements Initializable {
         oList.add(selectedItem);
         myItems.setItems(oList);
         oList2.remove(selectedItem);
+    }
+
+    @FXML
+    private void MoveToItems(ActionEvent event) {
+        try {
+            Parent view3 = FXMLLoader.load(getClass().getResource("int_ajout_elmt.fxml"));
+            Scene scene2 =new Scene(view3);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setTitle("Ajouter Colis");
+            window.setScene(scene2);
+            window.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } 
+        
     }
     
     

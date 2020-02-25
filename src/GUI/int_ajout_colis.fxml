@@ -38,5 +38,6 @@
       <Button fx:id="btnMove" layoutX="417.0" layoutY="127.0" mnemonicParsing="false" onAction="#moveItems" prefHeight="25.0" prefWidth="35.0" text="&gt;&gt;" />
       <Button fx:id="btnMove2" layoutX="417.0" layoutY="167.0" mnemonicParsing="false" onAction="#moveItemsToLEft" prefHeight="25.0" prefWidth="35.0" text="&lt;&lt;" />
       <ImageView fx:id="imageViewID" fitHeight="58.0" fitWidth="135.0" layoutX="108.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnAddItems" layoutX="399.0" layoutY="315.0" mnemonicParsing="false" onAction="#MoveToItems" text="Add Items" />
    </children>
 </AnchorPane>
