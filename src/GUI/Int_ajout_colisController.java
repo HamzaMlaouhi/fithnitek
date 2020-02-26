@@ -7,12 +7,20 @@ package GUI;
 
 import Entities.Colis;
 import Entities.Element;
+import Entities.Personne;
 import Services.ColisService;
 import Services.ElementService;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.chrono.ChronoLocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -30,6 +38,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -54,7 +63,7 @@ public class Int_ajout_colisController implements Initializable {
     @FXML
     private TextField to;
     @FXML
-    private TextField befdate;
+    private DatePicker befdate;
     @FXML
     private TextField shipname;
     @FXML
@@ -122,7 +131,10 @@ public class Int_ajout_colisController implements Initializable {
     }
     @FXML
         public void ajoutColis(ActionEvent e){
-        if(from.getText().equals("") || to.getText().equals("") || befdate.getText().equals("") || shipname.getText().equals("") ){
+      
+        
+
+        if(to.getText().equals("")  || from.getText().equals("") ||shipname.getText().equals("") ){
             alert.setText("insert all fields ");
         }
         else{
@@ -130,10 +142,10 @@ public class Int_ajout_colisController implements Initializable {
         ColisService cs = new ColisService();
         c.setDepart(from.getText());
         c.setDestination(to.getText());
-        c.setDate_limit(befdate.getText());
+        c.setDate_limit(befdate.getValue().toString());
         c.setLabel(shipname.getText());
         c.setDescription(note.getText());
-        c.setIdUtilisateur(1);
+        c.setIdUtilisateur(Personne.user.getId());
         c.setImage(fileName);
         cs.AjouterColis(c,oList2);
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

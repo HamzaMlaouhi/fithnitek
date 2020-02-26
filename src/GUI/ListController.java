@@ -141,7 +141,7 @@ public class ListController implements Initializable {
 
     @FXML
     private void addLivraison(ActionEvent event) {
-     Livraison liv = new Livraison();
+        Livraison liv = new Livraison();
         liv.setIdPersonne(Personne.user.getId());
         LivraisonService cs = new LivraisonService();
 
@@ -162,7 +162,7 @@ public class ListController implements Initializable {
         } catch (IOException ex) {
         }
     }
-    
+
     /*  public void transferMessage(Livraison liv) {
        
         LivraisonService ls = new LivraisonService();

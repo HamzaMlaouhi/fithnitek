@@ -10,6 +10,7 @@ import Entities.Colis;
 import Entities.Element;
 import Entities.Livraison;
 import Entities.Personne;
+import Entities.Utilisateur;
 import IServices.IColisService;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -204,6 +205,8 @@ public class ColisService implements IColisService {
         return c;
     }
     
+    
+    
     public double calculateColisReward(int idColis){
         double TotalPrix =0;
         int idElement =0 ;
@@ -222,13 +225,14 @@ public class ColisService implements IColisService {
             ResultSet resElement = pstee.executeQuery();
             while(resElement.next()){
                 Element e = new Element();
-                e.setPoid(resElement.getFloat("prix"));
-                e.setPrix(resElement.getDouble("poid"));
+                e.setPoid(resElement.getFloat("poid"));
+                e.setPrix(resElement.getDouble("prix"));
+                e.setQuantite(resElement.getInt("quantite"));
                 elemets.add(e);
             }
             }
             for(Element e : elemets){
-                TotalPrix += e.getPrix()*e.getPoid();
+                TotalPrix += e.getPrix()*e.getQuantite();
             }
            
         } catch (SQLException ex) {

@@ -185,7 +185,7 @@ public class Liste_colisController implements Initializable {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("detailsColis.fxml"));
         Parent root = loader.load();
-        DetailsColisController dcc = loader.getController();
+        DetailsColisController dcc = loader.load();
         dcc.load(listcolis.getSelectionModel().getSelectedItem().getId());
         Scene scene2 = new Scene(root);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

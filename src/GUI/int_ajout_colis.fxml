@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
@@ -13,7 +14,6 @@
    <children>
       <TextField fx:id="from" layoutX="104.0" layoutY="57.0" promptText="Form (City, Country)" />
       <TextField fx:id="to" layoutX="104.0" layoutY="89.0" promptText="To (City, Country)" />
-      <TextField fx:id="befdate" layoutX="103.0" layoutY="123.0" promptText="Before date" />
       <TextField fx:id="shipname" layoutX="103.0" layoutY="156.0" promptText="Shipment name" />
       <TextArea fx:id="note" layoutX="104.0" layoutY="189.0" prefHeight="103.0" prefWidth="149.0" promptText="notes" />
       <Button fx:id="pub" layoutX="104.0" layoutY="361.0" mnemonicParsing="false" onAction="#ajoutColis" prefHeight="25.0" prefWidth="143.0" text="Publish" />
@@ -39,5 +39,6 @@
       <Button fx:id="btnMove2" layoutX="417.0" layoutY="167.0" mnemonicParsing="false" onAction="#moveItemsToLEft" prefHeight="25.0" prefWidth="35.0" text="&lt;&lt;" />
       <ImageView fx:id="imageViewID" fitHeight="58.0" fitWidth="135.0" layoutX="108.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="btnAddItems" layoutX="399.0" layoutY="315.0" mnemonicParsing="false" onAction="#MoveToItems" text="Add Items" />
+      <DatePicker fx:id="befdate" layoutX="101.0" layoutY="123.0" prefHeight="25.0" prefWidth="155.0" />
    </children>
 </AnchorPane>

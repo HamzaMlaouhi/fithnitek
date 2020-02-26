@@ -197,6 +197,37 @@ public class UtilisateurService implements IUtilisateurService {
     }
     
     
+    public Utilisateur getUserById(int idUser){
+           Utilisateur sender = new Utilisateur();
+        try {
+            PreparedStatement pste = con.prepareStatement("Select * from fos_user where id=?");
+            pste.setInt(1, Personne.user.getId());
+            ResultSet res = pste.executeQuery();
+            while (res.next()) {
+              sender.setEmail(res.getString("email"));
+            }
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+        return sender;
+    }
+    
+    public Utilisateur getNotificationSenderInfo(){
+           Utilisateur sender = new Utilisateur();
+        try {
+            PreparedStatement pste = con.prepareStatement("Select * from notifications where idLivreur=?");
+            pste.setInt(1, Personne.user.getId());
+            ResultSet res = pste.executeQuery();
+            while (res.next()) {
+              sender = getUserById(res.getInt("idPropC"));
+            }
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+        return sender;
+    }
+    
+    
     
     
     

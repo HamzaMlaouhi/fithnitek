@@ -3,21 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/LogInController.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/ReclamationUIController.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/ProfilController.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/Services/LivraisonService.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/Liste_colisController.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/Services/UtilisateurService.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/AfficherReclamationController.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/ListAllController.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/IServices/IColisService.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/Services/CustomerService.java</file>
             <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/Entities/Element.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/Services/ColisService.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/Services/ReclamationService.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/HomePageController.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/ListRecTraiteesController.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/ProfilController.java</file>
             <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/FiThnitek.java</file>
-            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/IServices/IReclamationService.java</file>
+            <file>file:/C:/Users/yassine%20bayoudh/Desktop/Projets%20PI/fithnitek/src/GUI/DetailsColisController.java</file>
         </group>
     </open-files>
 </project-private>

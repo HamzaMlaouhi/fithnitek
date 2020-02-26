@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -51,6 +53,8 @@ public class SettingInterfaceController implements Initializable {
     private Button btnChangePass;
     @FXML
     private Button btnDelete;
+    @FXML
+    private Button btnGoToPayment;
 
     /**
      * Initializes the controller class.
@@ -113,6 +117,21 @@ public class SettingInterfaceController implements Initializable {
             LogInController apc = loader.getController();
             btnDelete.getScene().setRoot(root);
 
+        }
+    }
+
+    @FXML
+    private void GoToPaymentDetails(ActionEvent event) {
+        
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass()
+                    .getResource("Payment.fxml"));
+
+            Parent root = loader.load();
+            PaymentController apc = loader.getController();
+            btnDelete.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(SettingInterfaceController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

@@ -6,6 +6,7 @@
 package GUI;
 
 import Entities.Colis;
+import Entities.Personne;
 import Services.CustomerService;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,12 +47,12 @@ public class PaymentController implements Initializable {
     @FXML
     private void payAction(ActionEvent event) {
         CustomerService cs = new CustomerService();
-        cs.createCostumor("Yassine Bayoudh", "App Style Bolt Payment"); // Name will be retrieved with sessions
+        cs.createCostumor(Personne.user.getNom()+" "+Personne.user.getPrenom(), "App Style Bolt Payment"); // Name will be retrieved with sessions
         cs.createCustomerCard(txtCardNumber.getText(), txtMonth.getText(), txtYear.getText(), txtVcV.getText());
-        Colis c = new Colis(); // This will be retrieved from the "Colis" Page
-        c.setLabel("Colis 1");
+        //Colis c = new Colis(); // This will be retrieved from the "Colis" Page
+        //c.setLabel("Colis 1");
         //c.setPrix(300);
-        cs.checkoutPayment("usd", c);
+     //   cs.checkoutPayment("usd", c);
         
     }
     

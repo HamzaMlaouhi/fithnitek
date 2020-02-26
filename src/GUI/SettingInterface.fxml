@@ -16,9 +16,10 @@
       <Label layoutX="276.0" layoutY="259.0" text="Phone Number" />
       <TextField fx:id="txtNumb" layoutX="364.0" layoutY="255.0" style="-fx-border-color: #0598ff;" />
       <Label layoutX="327.0" layoutY="213.0" text="Email" />
-      <Button fx:id="btnBackToProfil" layoutX="34.0" layoutY="263.0" mnemonicParsing="false" onAction="#BackToProfilAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Back" textFill="WHITE" />
-      <Button fx:id="btnModify" layoutX="34.0" layoutY="90.0" mnemonicParsing="false" onAction="#ModifyAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Modify" textFill="WHITE" />
-      <Button fx:id="btnChangePass" layoutX="34.0" layoutY="146.0" mnemonicParsing="false" onAction="#ChangePassAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Change You Password" textFill="WHITE" />
-      <Button fx:id="btnDelete" layoutX="34.0" layoutY="205.0" mnemonicParsing="false" onAction="#DeleteAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Delete You Account" textFill="WHITE" />
+      <Button fx:id="btnBackToProfil" layoutX="34.0" layoutY="301.0" mnemonicParsing="false" onAction="#BackToProfilAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Back" textFill="WHITE" />
+      <Button fx:id="btnModify" layoutX="34.0" layoutY="135.0" mnemonicParsing="false" onAction="#ModifyAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Modify" textFill="WHITE" />
+      <Button fx:id="btnChangePass" layoutX="34.0" layoutY="191.0" mnemonicParsing="false" onAction="#ChangePassAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Change You Password" textFill="WHITE" />
+      <Button fx:id="btnDelete" layoutX="34.0" layoutY="245.0" mnemonicParsing="false" onAction="#DeleteAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Delete You Account" textFill="WHITE" />
+      <Button fx:id="btnGoToPayment" layoutX="34.0" layoutY="79.0" mnemonicParsing="false" onAction="#GoToPaymentDetails" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #0598ff;" text="Add You Payment Details" textFill="WHITE" />
    </children>
 </AnchorPane>
