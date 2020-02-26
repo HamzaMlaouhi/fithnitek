@@ -12,13 +12,12 @@
           <TableColumn fx:id="from" onEditCommit="#changeDepart" prefWidth="75.0" text="From" />
           <TableColumn fx:id="to" onEditCommit="#changeDestination" prefWidth="75.0" text="To" />
             <TableColumn fx:id="date" onEditCommit="#changeDate" prefWidth="129.0" text="Limit Date" />
-            <TableColumn fx:id="name" onEditCommit="#changeLabel" prefWidth="121.0" text="Shipment Name" />
+            <TableColumn fx:id="name" onEditCommit="#changeLabel" prefWidth="121.0" text="Package Name" />
             <TableColumn fx:id="note" onEditCommit="#changeNote" prefWidth="110.0" text="Note" />
         </columns>
       </TableView>
-      <Button fx:id="btnadd" layoutX="81.0" layoutY="296.0" mnemonicParsing="false" onAction="#backToColis" text="Ajouter un Colis" />
-      <Button fx:id="btnModifier" layoutX="248.0" layoutY="296.0" mnemonicParsing="false" onAction="#updateColis" text="Modifier" />
-      <Button fx:id="btnSupprimer" layoutX="363.0" layoutY="296.0" mnemonicParsing="false" onAction="#DeleteColis" text="Supprimer" />
-      <Button fx:id="btnSeeItems" layoutX="477.0" layoutY="296.0" mnemonicParsing="false" onAction="#seeItems" text="See items" />
+      <Button fx:id="btnadd" layoutX="93.0" layoutY="296.0" mnemonicParsing="false" onAction="#backToColis" style="-fx-background-color: #7B3F9F;" text="Add Package" textFill="WHITE" />
+      <Button fx:id="btnModifier" layoutX="250.0" layoutY="296.0" mnemonicParsing="false" onAction="#updateColis" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #7B3F9F;" text="Modify" textFill="WHITE" />
+      <Button fx:id="btnSupprimer" layoutX="416.0" layoutY="296.0" mnemonicParsing="false" onAction="#DeleteColis" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #7B3F9F;" text="Delete" textFill="WHITE" />
    </children>
 </AnchorPane>

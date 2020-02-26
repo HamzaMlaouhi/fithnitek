@@ -5,12 +5,15 @@
  */
 package GUI;
 
+import com.sun.javafx.css.Style;
+import com.sun.javafx.css.StyleManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javax.swing.text.html.CSS;
 
 /**
  *
@@ -24,6 +27,7 @@ public class FiThnitek extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+       
         
     }
 

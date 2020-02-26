@@ -17,13 +17,13 @@
             <TableColumn fx:id="TempsCol" prefWidth="113.59991455078125" text="Temps" />
         </columns>
       </TableView>
-      <Label layoutX="235.0" layoutY="38.0" prefHeight="38.0" prefWidth="129.0" text="Mes Voyages" textFill="#000000fc">
+      <Label layoutX="235.0" layoutY="31.0" prefHeight="38.0" prefWidth="148.0" text="Mes Voyages" textFill="#7b3f9ffc">
          <font>
-            <Font size="21.0" />
+            <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="412.0" layoutY="352.0" mnemonicParsing="false" onAction="#DeleteLivraison" prefHeight="26.0" prefWidth="102.0" text="Supprimer" />
-      <Button fx:id="btnMod" layoutX="125.0" layoutY="352.0" mnemonicParsing="false" onAction="#updateLivraison" prefHeight="26.0" prefWidth="93.0" text="Modifier" />
-      <Button fx:id="ajoutid" layoutX="258.0" layoutY="352.0" mnemonicParsing="false" onAction="#addLivraison" prefHeight="26.0" prefWidth="102.0" text="Ajouter " />
+      <Button layoutX="412.0" layoutY="352.0" mnemonicParsing="false" onAction="#DeleteLivraison" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #7B3F9F;" text="Supprimer" textFill="WHITE" />
+      <Button fx:id="btnMod" layoutX="125.0" layoutY="352.0" mnemonicParsing="false" onAction="#updateLivraison" prefHeight="26.0" prefWidth="93.0" style="-fx-background-color: #7B3F9F;" text="Modifier" textFill="WHITE" />
+      <Button fx:id="ajoutid" layoutX="258.0" layoutY="352.0" mnemonicParsing="false" onAction="#addLivraison" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #7B3F9F;" text="Ajouter " textFill="WHITE" />
    </children>
 </AnchorPane>

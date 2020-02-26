@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ChangePassInterfaceController">
+   <children>
+      <Button fx:id="btnChangePassword" layoutX="237.0" layoutY="272.0" mnemonicParsing="false" onAction="#ChangeAction" prefHeight="27.0" prefWidth="130.0" style="-fx-background-color: #7B3F9F;" text="Change Password" textFill="WHITE" />
+      <PasswordField fx:id="txtPassV" layoutX="226.0" layoutY="156.0" style="-fx-border-color: #7B3F9F;" />
+      <PasswordField fx:id="txtPassConfV" layoutX="226.0" layoutY="208.0" style="-fx-border-color: #7B3F9F;" />
+      <Label layoutX="142.0" layoutY="161.0" text="Password" />
+      <Label layoutX="119.0" layoutY="213.0" text="Confirm Password" />
+      <Label layoutX="215.0" layoutY="117.0" prefHeight="17.0" prefWidth="189.0" text="Give Us Your New Password" textFill="#7b3f9f">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

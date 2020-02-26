@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="635.0" style="-fx-background-color: #990000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StatReclamationController">
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="635.0" style="-fx-background-color: #7B3F9F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StatReclamationController">
    <children>
       <AnchorPane layoutY="66.0" prefHeight="439.0" prefWidth="635.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <Label layoutX="48.0" layoutY="21.0" prefHeight="36.0" prefWidth="299.0" text="Statistique Reclamation" textFill="#990000">
+            <Label layoutX="48.0" layoutY="21.0" prefHeight="36.0" prefWidth="299.0" text="Statistique Reclamation" textFill="#7b3f9f">
                <font>
                   <Font size="25.0" />
                </font>
@@ -18,9 +18,8 @@
             <PieChart fx:id="pie" layoutX="97.0" layoutY="70.0" prefHeight="321.0" prefWidth="442.0" />
          </children>
       </AnchorPane>
-      <Button fx:id="btnAjout" layoutX="11.0" layoutY="25.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #990000;" text="Ajouter Reclamation" textFill="WHITE" />
-      <Button fx:id="btnListe" layoutX="146.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="203.0" style="-fx-background-color: #990000;" text="Liste des Reclamations non traitees" textFill="WHITE" />
-      <Button fx:id="btnstat" layoutX="513.0" layoutY="25.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #990000;" text="Statistique " textFill="WHITE" />
-      <Button fx:id="btnlistetraitees" layoutX="349.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamationTratiees" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: #990000;" text="Liste des reclamations traitees" textFill="WHITE" />
+      <Button fx:id="btnListe" layoutX="146.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="203.0" style="-fx-background-color: #7B3F9F; -fx-border-color: #ffffff;" text="Liste des Reclamations non traitees" textFill="WHITE" />
+      <Button fx:id="btnstat" layoutX="513.0" layoutY="25.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #7B3F9F; -fx-border-color: #ffffff;" text="Statistique " textFill="WHITE" />
+      <Button fx:id="btnlistetraitees" layoutX="349.0" layoutY="25.0" mnemonicParsing="false" onAction="#ListerReclamationTratiees" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: #7B3F9F; -fx-border-color: #ffffff;" text="Liste des reclamations traitees" textFill="WHITE" />
    </children>
 </AnchorPane>

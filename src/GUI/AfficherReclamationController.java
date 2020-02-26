@@ -142,7 +142,7 @@ public class AfficherReclamationController implements Initializable {
 	            }
 	            ListRec.setItems(subentries);
 	        });
-	        load();
+	   
     
     }
 

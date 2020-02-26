@@ -21,6 +21,7 @@ public class Personne extends Utilisateur {
     private int cin;
     private int num_tel;
     public static Personne user;
+    public static int Code;
 
     public Personne() {
     }

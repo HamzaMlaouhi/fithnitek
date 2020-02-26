@@ -22,8 +22,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-
+import javafx.stage.Stage;   
 /**
  * FXML Controller class
  *
@@ -48,7 +47,7 @@ public class LogInController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         Image image = new Image("/Images/fi-thnitek.png");
         LogoViewID.setImage(image);
-
+ 
         }
 
     @FXML

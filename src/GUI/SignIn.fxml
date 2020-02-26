@@ -12,25 +12,25 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SignInController">
    <children>
-      <TextField fx:id="txtEmail" layoutX="402.0" layoutY="92.0" promptText="email@example.com" style="-fx-border-color: #0598ff;" />
-      <TextField fx:id="txtUsername" layoutX="402.0" layoutY="57.0" promptText="Username" style="-fx-border-color: #0598ff;" />
+      <TextField fx:id="txtEmail" layoutX="402.0" layoutY="92.0" promptText="email@example.com" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="txtUsername" layoutX="402.0" layoutY="57.0" promptText="Username" style="-fx-border-color: #7B3F9F;" />
       <Label layoutX="320.0" layoutY="61.0" text="Username" />
       <Label layoutX="331.0" layoutY="96.0" text="Email" />
-      <TextField fx:id="txtLastName" layoutX="402.0" layoutY="22.0" prefHeight="25.0" prefWidth="72.0" promptText="Last name" style="-fx-border-color: #0598ff;" />
-      <TextField fx:id="txtName" layoutX="477.0" layoutY="22.0" prefHeight="25.0" prefWidth="72.0" promptText="Name" style="-fx-border-color: #0598ff;" />
+      <TextField fx:id="txtLastName" layoutX="402.0" layoutY="22.0" prefHeight="25.0" prefWidth="72.0" promptText="Last name" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="txtName" layoutX="477.0" layoutY="22.0" prefHeight="25.0" prefWidth="72.0" promptText="Name" style="-fx-border-color: #7B3F9F;" />
       <Label layoutX="320.0" layoutY="169.0" text="Password" />
       <Label layoutX="318.0" layoutY="26.0" text="Full Name" />
       <Label layoutX="300.0" layoutY="207.0" text="Confirm Password" />
-      <TextField fx:id="txtCIN" layoutX="403.0" layoutY="240.0" promptText="CIN" style="-fx-border-color: #0598ff;" />
+      <TextField fx:id="txtCIN" layoutX="403.0" layoutY="240.0" promptText="CIN" style="-fx-border-color: #7B3F9F;" />
       <Label layoutX="338.0" layoutY="244.0" text="CIN" />
-      <TextField fx:id="txtPhoneNumber" layoutX="403.0" layoutY="277.0" promptText="Phone Number" style="-fx-border-color: #0598ff;" />
+      <TextField fx:id="txtPhoneNumber" layoutX="403.0" layoutY="277.0" promptText="Phone Number" style="-fx-border-color: #7B3F9F;" />
       <Label layoutX="308.0" layoutY="282.0" text="Phone Number" />
       <ComboBox fx:id="ZoneSexe" layoutX="402.0" layoutY="130.0" prefWidth="150.0" />
       <Label layoutX="334.0" layoutY="134.0" prefWidth="81.0" text="Sexe" />
-      <PasswordField fx:id="txtPassword" layoutX="403.0" layoutY="165.0" promptText="Password" style="-fx-border-color: #0598ff;" />
-      <PasswordField fx:id="txtConfPassword" layoutX="403.0" layoutY="203.0" promptText="Confirm Password" style="-fx-border-color: #0598ff;" />
-      <Button fx:id="btnRegister" layoutX="302.0" layoutY="323.0" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #0598ff;" text="Register" textFill="WHITE" />
-      <Button fx:id="btnBack" layoutX="302.0" layoutY="362.0" mnemonicParsing="false" onAction="#BackToLogIn" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #0598ff;" text="Back" textFill="WHITE" />
+      <PasswordField fx:id="txtPassword" layoutX="403.0" layoutY="165.0" promptText="Password" style="-fx-border-color: #7B3F9F;" />
+      <PasswordField fx:id="txtConfPassword" layoutX="403.0" layoutY="203.0" promptText="Confirm Password" style="-fx-border-color: #7B3F9F;" />
+      <Button fx:id="btnRegister" layoutX="302.0" layoutY="323.0" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #7B3F9F;" text="Register" textFill="WHITE" />
+      <Button fx:id="btnBack" layoutX="302.0" layoutY="362.0" mnemonicParsing="false" onAction="#BackToLogIn" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #7B3F9F;" text="Back" textFill="WHITE" />
       <Label fx:id="FailUsername" layoutX="554.0" layoutY="64.0" prefHeight="14.0" prefWidth="20.0" textFill="#e41e1e">
          <font>
             <Font name="Californian FB" size="12.0" />
@@ -66,7 +66,7 @@
             <Font name="Californian FB" size="12.0" />
          </font>
       </Label>
-      <Pane layoutY="-8.0" prefHeight="409.0" prefWidth="290.0" style="-fx-background-color: #0598ff;">
+      <Pane layoutY="-8.0" prefHeight="409.0" prefWidth="290.0" style="-fx-background-color: #7B3F9F;">
          <children>
             <ImageView fx:id="ImageFi" fitHeight="158.0" fitWidth="202.0" layoutX="68.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
          </children></Pane>

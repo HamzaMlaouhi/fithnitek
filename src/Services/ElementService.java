@@ -95,7 +95,7 @@ List<Element> listElement = new ArrayList<Element>();
             ResultSet res = ste.executeQuery(sql);
             while(res.next())
             {
-                Element e = new Element(res.getInt("id"),res.getString("name"),res.getInt("quantite"),res.getDouble("prix"),res.getFloat("poid"),res.getString("image") );
+                Element e = new Element(res.getInt("id"),res.getString("name"),res.getInt("quantite"),res.getDouble("prix"),res.getFloat("poid"));
                 listElement.add(e);
             }
      }catch(SQLException ex){
@@ -140,4 +140,25 @@ List<Element> listElement = new ArrayList<Element>();
         return listElmentColis;
         
     }
+    
+        public List<Element> AfficherMyElements(int id) {
+        List<Element> listElmentColis = new ArrayList<>();
+        try {
+            String sql = "Select * From element where idUtilisateur="+id;
+            Statement stee = con.createStatement();
+            ResultSet res = stee.executeQuery(sql);
+            while(res.next())
+            {
+             Element e = new Element(res.getInt("id"),res.getString("name"),res.getInt("quantite"),res.getDouble("prix"),res.getFloat("poid"));
+             listElmentColis.add(e);
+            }
+     }catch(SQLException ex){
+         ex.getMessage(); 
+     }
+        return listElmentColis;
+    }
+    
+    
+    
+    
     }    

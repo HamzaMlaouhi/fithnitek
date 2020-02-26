@@ -8,21 +8,19 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Int_ajout_elmtController">
    <children>
-      <Label layoutX="207.0" layoutY="52.0" prefHeight="17.0" prefWidth="97.0" text="Item details" />
-      <TextField fx:id="nomelmt" layoutX="221.0" layoutY="77.0" promptText="Item name" />
-      <TextField fx:id="quantite" layoutX="221.0" layoutY="111.0" promptText="Item quantity" />
-      <TextField fx:id="prix" layoutX="221.0" layoutY="146.0" promptText="Singel item price" />
-      <Label layoutX="378.0" layoutY="148.0" prefHeight="17.0" prefWidth="97.0" text="Total(0)" />
-      <TextField fx:id="poid" layoutX="221.0" layoutY="183.0" promptText="Singel item weight (KG)" />
-      <Button fx:id="btnadd" layoutX="235.0" layoutY="253.0" mnemonicParsing="false" onAction="#ajoutElement" text="ADD" />
-      <Label fx:id="namelab" layoutX="146.0" layoutY="81.0" prefHeight="17.0" prefWidth="64.0" text="Item name " />
-      <Label fx:id="quantlab" layoutX="135.0" layoutY="115.0" prefHeight="17.0" prefWidth="76.0" text="Item quantity" />
-      <Label fx:id="pricelab" layoutX="115.0" layoutY="150.0" prefHeight="17.0" prefWidth="97.0" text="Singel item price" />
-      <Label fx:id="poidlab" layoutX="84.0" layoutY="187.0" prefHeight="17.0" prefWidth="131.0" text="Singel item weight (KG)" />
-      <Button fx:id="btnadd1" layoutX="284.0" layoutY="253.0" mnemonicParsing="false" onAction="#backToColis" text="Back" />
-      <Label fx:id="titlab" layoutX="209.0" layoutY="14.0" prefHeight="30.0" prefWidth="156.0" text="Ajout d'Element">
+      <TextField fx:id="nomelmt" layoutX="221.0" layoutY="119.0" promptText="Item name" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="quantite" layoutX="221.0" layoutY="159.0" promptText="Item quantity" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="prix" layoutX="221.0" layoutY="200.0" promptText="Singel item price" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="poid" layoutX="221.0" layoutY="239.0" promptText="Singel item weight (KG)" style="-fx-border-color: #7B3F9F;" />
+      <Button fx:id="btnadd" layoutX="227.0" layoutY="292.0" mnemonicParsing="false" onAction="#ajoutElement" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #7B3F9F;" text="ADD" textFill="WHITE" />
+      <Label fx:id="namelab" layoutX="127.0" layoutY="124.0" prefHeight="17.0" prefWidth="64.0" text="Item name " />
+      <Label fx:id="quantlab" layoutX="121.0" layoutY="164.0" prefHeight="17.0" prefWidth="76.0" text="Item quantity" />
+      <Label fx:id="pricelab" layoutX="110.0" layoutY="205.0" prefHeight="17.0" prefWidth="97.0" text="Singel item price" />
+      <Label fx:id="poidlab" layoutX="81.0" layoutY="244.0" prefHeight="17.0" prefWidth="131.0" text="Singel item weight (KG)" />
+      <Button fx:id="btnadd1" layoutX="315.0" layoutY="292.0" mnemonicParsing="false" onAction="#backToColis" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #7B3F9F;" text="Back" textFill="WHITE" />
+      <Label fx:id="titlab" layoutX="211.0" layoutY="45.0" prefHeight="42.0" prefWidth="171.0" text="Ajout d'Element" textFill="#7b3f9f">
          <font>
-            <Font size="22.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
      

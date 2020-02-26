@@ -18,16 +18,16 @@
             <TableColumn fx:id="TempsCol" prefWidth="113.59991455078125" text="Time" />
         </columns>
       </TableView>
-      <Label layoutX="276.0" prefHeight="38.0" prefWidth="49.0" text="Trips" textAlignment="CENTER" textFill="#000000fc">
+      <Label layoutX="269.0" prefHeight="38.0" prefWidth="62.0" text="Trips" textAlignment="CENTER" textFill="#7b3f9ffc">
          <font>
-            <Font size="21.0" />
+            <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="btnMesVoy" layoutX="232.0" layoutY="427.0" mnemonicParsing="false" onAction="#MesVoyages" prefHeight="26.0" prefWidth="149.0" text="Mes Voyages" />
-      <TextField fx:id="tDep" layoutX="69.0" layoutY="343.0" promptText="From" />
-      <TextField fx:id="tDes" layoutX="232.0" layoutY="343.0" promptText="To" />
-      <Button fx:id="btnRech" layoutX="393.0" layoutY="342.0" mnemonicParsing="false" onAction="#rechercherLivraison" prefHeight="26.0" prefWidth="149.0" text="Search" />
+      <Button fx:id="btnMesVoy" layoutX="232.0" layoutY="427.0" mnemonicParsing="false" onAction="#MesVoyages" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: #7B3F9F;" text="Mes Voyages" textFill="WHITE" />
+      <TextField fx:id="tDep" layoutX="69.0" layoutY="343.0" promptText="From" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="tDes" layoutX="232.0" layoutY="343.0" promptText="To" style="-fx-border-color: #7B3F9F;" />
+      <Button fx:id="btnRech" layoutX="393.0" layoutY="342.0" mnemonicParsing="false" onAction="#rechercherLivraison" prefHeight="26.0" prefWidth="149.0" style="-fx-background-color: #7B3F9F;" text="Search" textFill="WHITE" />
       <Label fx:id="lInformation" layoutX="69.0" layoutY="440.0" />
-      <Button fx:id="SendBtn" layoutX="233.0" layoutY="387.0" mnemonicParsing="false" onAction="#CreateNotification" prefHeight="25.0" prefWidth="149.0" text="Send Request" />
+      <Button fx:id="SendBtn" layoutX="233.0" layoutY="387.0" mnemonicParsing="false" onAction="#CreateNotification" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #7B3F9F;" text="Send Request" textFill="WHITE" />
    </children>
 </AnchorPane>

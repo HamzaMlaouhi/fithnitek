@@ -12,33 +12,36 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Int_ajout_colisController">
    <children>
-      <TextField fx:id="from" layoutX="104.0" layoutY="57.0" promptText="Form (City, Country)" />
-      <TextField fx:id="to" layoutX="104.0" layoutY="89.0" promptText="To (City, Country)" />
-      <TextField fx:id="shipname" layoutX="103.0" layoutY="156.0" promptText="Shipment name" />
-      <TextArea fx:id="note" layoutX="104.0" layoutY="189.0" prefHeight="103.0" prefWidth="149.0" promptText="notes" />
-      <Button fx:id="pub" layoutX="104.0" layoutY="361.0" mnemonicParsing="false" onAction="#ajoutColis" prefHeight="25.0" prefWidth="143.0" text="Publish" />
+      <TextField fx:id="from" layoutX="104.0" layoutY="57.0" promptText="Form (City, Country)" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="to" layoutX="104.0" layoutY="89.0" promptText="To (City, Country)" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="shipname" layoutX="103.0" layoutY="156.0" promptText="Shipment name" style="-fx-border-color: #7B3F9F;" />
+      <TextArea fx:id="note" layoutX="104.0" layoutY="189.0" prefHeight="103.0" prefWidth="149.0" promptText="notes" style="-fx-border-color: #7B3F9F;" />
+      <Button fx:id="pub" layoutX="104.0" layoutY="361.0" mnemonicParsing="false" onAction="#ajoutColis" prefHeight="25.0" prefWidth="143.0" style="-fx-background-color: #7B3F9F;" text="Publish" textFill="WHITE" />
       <Label fx:id="finish" layoutX="31.0" layoutY="93.0" prefHeight="17.0" prefWidth="35.0" text="Finish" />
       <Label fx:id="limitdate" layoutX="23.0" layoutY="127.0" prefHeight="17.0" prefWidth="55.0" text="Limit Date" />
       <Label fx:id="idshipname" layoutX="6.0" layoutY="160.0" prefHeight="17.0" prefWidth="89.0" text="Shipment Name" />
       <Label fx:id="start" layoutX="36.0" layoutY="61.0" prefHeight="17.0" prefWidth="29.0" text="Start" />
-      <Label fx:id="titlab" layoutX="117.0" layoutY="14.0" prefHeight="32.0" prefWidth="116.0" text="Create Package">
+      <Label fx:id="titlab" layoutX="117.0" layoutY="14.0" prefHeight="32.0" prefWidth="116.0" text="Create Package" textFill="#7b3f9f">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="mycolis" layoutX="528.0" layoutY="361.0" mnemonicParsing="false" onAction="#myColis" text="MyColis" />
+      <Button fx:id="mycolis" layoutX="528.0" layoutY="361.0" mnemonicParsing="false" onAction="#myColis" style="-fx-background-color: #7B3F9F;" text="MyColis" textFill="WHITE" />
       <Label fx:id="idshipname1" layoutX="33.0" layoutY="192.0" prefHeight="17.0" prefWidth="35.0" text="Note" textAlignment="CENTER" />
-      <ListView fx:id="myItems" layoutX="279.0" layoutY="57.0" prefHeight="232.0" prefWidth="135.0" />
-      <ListView fx:id="addedItems" layoutX="457.0" layoutY="57.0" prefHeight="232.0" prefWidth="135.0" />
-      <Label fx:id="titlab1" layoutX="364.0" layoutY="14.0" prefHeight="32.0" prefWidth="155.0" text="Add Item to package">
+      <ListView fx:id="myItems" layoutX="279.0" layoutY="57.0" prefHeight="232.0" prefWidth="135.0" style="-fx-border-color: #7B3F9F;" />
+      <ListView fx:id="addedItems" layoutX="457.0" layoutY="57.0" prefHeight="232.0" prefWidth="135.0" style="-fx-border-color: #7B3F9F;" />
+      <Label fx:id="titlab1" layoutX="352.0" layoutY="14.0" prefHeight="32.0" prefWidth="166.0" text="Add Item to package" textFill="#7b3f9f">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btnMove" layoutX="417.0" layoutY="127.0" mnemonicParsing="false" onAction="#moveItems" prefHeight="25.0" prefWidth="35.0" text="&gt;&gt;" />
-      <Button fx:id="btnMove2" layoutX="417.0" layoutY="167.0" mnemonicParsing="false" onAction="#moveItemsToLEft" prefHeight="25.0" prefWidth="35.0" text="&lt;&lt;" />
+      <Button fx:id="btnMove" layoutX="417.0" layoutY="127.0" mnemonicParsing="false" onAction="#moveItems" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #7B3F9F;" text="&gt;&gt;" textFill="WHITE" />
+      <Button fx:id="btnMove2" layoutX="417.0" layoutY="167.0" mnemonicParsing="false" onAction="#moveItemsToLEft" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #7B3F9F;" text="&lt;&lt;" textFill="WHITE" />
       <ImageView fx:id="imageViewID" fitHeight="58.0" fitWidth="135.0" layoutX="108.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="btnAddItems" layoutX="399.0" layoutY="315.0" mnemonicParsing="false" onAction="#MoveToItems" text="Add Items" />
-      <DatePicker fx:id="befdate" layoutX="101.0" layoutY="123.0" prefHeight="25.0" prefWidth="155.0" />
+      <Button fx:id="btnAddItems" layoutX="399.0" layoutY="315.0" mnemonicParsing="false" onAction="#MoveToItems" style="-fx-background-color: #7B3F9F;" text="Add Items" textFill="WHITE" />
+      <DatePicker fx:id="befdate" layoutX="101.0" layoutY="123.0" prefHeight="25.0" prefWidth="155.0" style="-fx-border-color: #7B3F9F;" />
+      <Label layoutX="140.0" layoutY="319.0" prefHeight="17.0" prefWidth="71.0" text="Add Image" />
+      <Button fx:id="delete" layoutX="321.0" layoutY="292.0" mnemonicParsing="false" onAction="#DeleteElement" text="Delete" />
+
    </children>
 </AnchorPane>

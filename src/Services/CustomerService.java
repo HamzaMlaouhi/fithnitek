@@ -93,17 +93,17 @@ public class CustomerService implements ICustomerService{
         Customer customer = getCurrentCostumer();
         try {
             Map<String,Object> chargeParam = new HashMap<>();
-            chargeParam.put("amount", c.getReward());
+            chargeParam.put("amount",(int)c.getReward());
             chargeParam.put("currency", currency);
             chargeParam.put("customer",customer.getId() ); 
-            Charge.create(chargeParam);
+            Charge.create(chargeParam); //Ereror Here
             
             
             String sql = "INSERT INTO transactions (id_costumer, product, amount,currency,status) VALUES (?,?,?,?,?)";
             ste = con.prepareStatement(sql);
             ste.setString(1, customer.getId());
             ste.setString(2, c.getLabel());
-            //ste.setInt(3, c.getPrix());
+            ste.setInt(3, (int)c.getReward());
             ste.setString(4,currency);
             //ste.setString(5, c.getStatus()); // TO DO in Colis Class
             ste.setString(5,"Payed");

@@ -5,9 +5,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminInterfaceController">
    <children>
-      <Button fx:id="btnRec" layoutX="207.0" layoutY="77.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #0598ff;" text="Reclamation" textFill="WHITE" />
-      <Button fx:id="btnPac" layoutX="207.0" layoutY="148.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #0598ff;" text="The Package" textFill="WHITE" />
-      <Button fx:id="btnTra" layoutX="207.0" layoutY="217.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #0598ff;" text="Transaction" textFill="WHITE" />
-      <Button fx:id="btnGro" layoutX="207.0" layoutY="279.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #0598ff;" text="Groups" textFill="WHITE" />
+      <Button fx:id="btnRec" layoutX="56.0" layoutY="69.0" mnemonicParsing="false" onAction="#GotToReclamation" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #7B3F9F;" text="Reclamation" textFill="WHITE" />
+      <Button fx:id="btnPac" layoutX="56.0" layoutY="158.0" mnemonicParsing="false" onAction="#GotToPackage" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #7B3F9F;" text="The Package" textFill="WHITE" />
+      <Button fx:id="btnTra" layoutX="345.0" layoutY="69.0" mnemonicParsing="false" onAction="#GotToTransaction" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #7B3F9F;" text="Transaction" textFill="WHITE" />
+      <Button fx:id="btnGro" layoutX="345.0" layoutY="158.0" mnemonicParsing="false" onAction="#GotToGroup" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #7B3F9F;" text="Groups" textFill="WHITE" />
+      <Button fx:id="btnGro1" layoutX="207.0" layoutY="323.0" mnemonicParsing="false" onAction="#logOutAction" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #7B3F9F;" text="Log Out" textFill="WHITE" />
+      <Button fx:id="btnAllItems" layoutX="207.0" layoutY="241.0" mnemonicParsing="false" onAction="#GotoItem" prefHeight="45.0" prefWidth="186.0" style="-fx-background-color: #7B3F9F;" text="All Items" textFill="WHITE" />
    </children>
 </AnchorPane>

@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifLivController">
    <children>
-      <Button fx:id="bMod" layoutX="274.0" layoutY="321.0" mnemonicParsing="false" onAction="#updateLivraison" text="Modifier" textFill="#bc2626">
+      <Button fx:id="bMod" layoutX="263.0" layoutY="323.0" mnemonicParsing="false" onAction="#updateLivraison" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: #7B3F9F;" text="Modifier" textFill="WHITE">
          <font>
             <Font name="MS Outlook" size="12.0" />
          </font>
@@ -19,12 +19,12 @@
             <Insets />
          </opaqueInsets>
       </Label>
-      <Label layoutX="139.0" layoutY="129.0" text="Destination">
+      <Label layoutX="139.0" layoutY="129.0" text="To">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Label>
-      <Label layoutX="139.0" layoutY="191.0" text="Poids Disponible">
+      <Label layoutX="139.0" layoutY="191.0" text="Available Weight">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -34,9 +34,9 @@
             <Insets />
          </opaqueInsets>
       </Label>
-      <TextField fx:id="tDepart" layoutX="342.0" layoutY="60.0" />
-      <TextField fx:id="tDest" layoutX="342.0" layoutY="125.0" />
-      <TextField fx:id="tPoids" layoutX="342.0" layoutY="187.0" />
-      <TextField fx:id="tTemps" layoutX="342.0" layoutY="247.0" />
+      <TextField fx:id="tDepart" layoutX="342.0" layoutY="60.0" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="tDest" layoutX="342.0" layoutY="125.0" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="tPoids" layoutX="342.0" layoutY="187.0" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="tTemps" layoutX="342.0" layoutY="247.0" style="-fx-border-color: #7B3F9F;" />
    </children>
 </AnchorPane>

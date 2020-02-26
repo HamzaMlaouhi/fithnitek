@@ -134,7 +134,6 @@ public class ListRecTraiteesController implements Initializable {
 	            }
 	            ListRec.setItems(subentries);
 	        });
-    load();
     }
 
     @FXML

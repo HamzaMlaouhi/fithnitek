@@ -109,6 +109,10 @@ public class Int_ajout_colisController implements Initializable {
     String fileName;
     @FXML
     private Button btnAddItems;
+    
+    @FXML
+    private Button delete;
+
 
 
     public void colis(ActionEvent e){ 
@@ -274,6 +278,17 @@ public class Int_ajout_colisController implements Initializable {
         } 
         
     }
+    
+    @FXML
+    private void DeleteElement(ActionEvent event) {
+        Element element = myItems.getSelectionModel().getSelectedItem();
+        ElementService es = new ElementService();
+       es.SupprimerElement(element);
+       oList.remove(element);
+       myItems.refresh();
+       
+    }
+
     
     
     

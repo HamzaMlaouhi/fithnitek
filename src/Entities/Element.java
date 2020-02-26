@@ -21,24 +21,14 @@ public class Element {
         
     }
 
-    public Element(int id, String name, int quantite, Double prix, Float poid, Categorie[] categories, String image) {
+    public Element(int id, String name, int quantite, Double prix, Float poid) {
         this.id = id;
         this.name = name;
         this.quantite = quantite;
         this.prix = prix;
         this.poid = poid;
-        this.categories = categories ;
-        this.image = image;
     }
-     public Element(int id, String name, int quantite, Double prix, Float poid, String image) {
-        this.id = id;
-        this.name = name;
-        this.quantite = quantite;
-        this.prix = prix;
-        this.poid = poid;
-        this.image = image;
-    }
-
+     
     public int getId() {
         return id;
     }

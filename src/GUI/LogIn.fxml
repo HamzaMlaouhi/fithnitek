@@ -9,17 +9,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogInController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LogInController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="290.0" style="-fx-background-color: #0598ff;">
+      <Pane prefHeight="400.0" prefWidth="290.0" style="-fx-background-color: #7B3F9F;" stylesheets="@Style.css">
          <children>
             <ImageView fx:id="LogoViewID" fitHeight="158.0" fitWidth="202.0" layoutX="68.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
          </children></Pane>
-      <Button fx:id="btnLogIn" layoutX="354.0" layoutY="243.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: #0589ff;" text="Log in" textFill="WHITE" />
-      <Button fx:id="btnSignIn" layoutX="468.0" layoutY="243.0" mnemonicParsing="false" onAction="#SignAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: #0589ff;" text="Sign in" textFill="WHITE" />
-      <PasswordField fx:id="txtPassWord" layoutX="346.0" layoutY="169.0" prefHeight="29.0" prefWidth="202.0" promptText="Password" style="-fx-border-color: #0598ff;" />
-      <TextField fx:id="txtLogIn" layoutX="345.0" layoutY="119.0" prefHeight="29.0" prefWidth="202.0" promptText="Email or Username" style="-fx-border-color: #0598ff;" />
-      <Hyperlink fx:id="HypForgetPass" layoutX="372.0" layoutY="335.0" onAction="#ForgetPassAction" prefHeight="28.0" prefWidth="158.0" text="Forget Your Password ?">
+      <Button fx:id="btnLogIn" layoutX="354.0" layoutY="243.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: #7B3F9F;" text="Log in" textFill="WHITE" />
+      <Button fx:id="btnSignIn" layoutX="468.0" layoutY="243.0" mnemonicParsing="false" onAction="#SignAction" prefHeight="39.0" prefWidth="71.0" style="-fx-background-color: #7B3F9F;" text="Sign in" textFill="WHITE" />
+      <PasswordField fx:id="txtPassWord" layoutX="346.0" layoutY="169.0" prefHeight="29.0" prefWidth="202.0" promptText="Password" style="-fx-border-color: #7B3F9F;" />
+      <TextField fx:id="txtLogIn" layoutX="345.0" layoutY="119.0" prefHeight="29.0" prefWidth="202.0" promptText="Email or Username" style="-fx-border-color: #7B3F9F;" />
+      <Hyperlink fx:id="HypForgetPass" layoutX="372.0" layoutY="335.0" onAction="#ForgetPassAction" prefHeight="28.0" prefWidth="158.0" style="-fx-background-color: 0;" text="Forget Your Password ?" textFill="#7b3f9f">
          <font>
             <Font size="14.0" />
          </font>

@@ -18,11 +18,11 @@
             <TableColumn fx:id="cPurchaseTime" prefWidth="101.0" text="Purchase Time" />
         </columns>
       </TableView>
-      <Label layoutX="195.0" layoutY="21.0" text="Transactions List">
+      <Label layoutX="187.0" layoutY="21.0" text="Transactions List" textFill="#7b3f9f">
          <font>
-            <Font size="29.0" />
+            <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <Button fx:id="btnPrintBill" layoutX="249.0" layoutY="345.0" mnemonicParsing="false" onAction="#PrintBill" prefHeight="25.0" prefWidth="108.0" text="Print Bill" />
+      <Button fx:id="btnPrintBill" layoutX="240.0" layoutY="340.0" mnemonicParsing="false" onAction="#PrintBill" prefHeight="29.0" prefWidth="126.0" style="-fx-background-color: #7B3F9F;" text="Print Bill" textFill="WHITE" />
    </children>
 </AnchorPane>

@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="701.0" style="-fx-background-color: #990000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherReclamationController">
+<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="701.0" style="-fx-background-color: #7B3F9F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherReclamationController">
    <children>
       <AnchorPane layoutY="66.0" prefHeight="439.0" prefWidth="733.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <Label layoutX="14.0" layoutY="23.0" prefHeight="36.0" prefWidth="413.0" text="Liste des Reclamations non traitees" textFill="#990000">
+            <Label layoutX="14.0" layoutY="23.0" prefHeight="36.0" prefWidth="413.0" text="Liste des Reclamations non traitees" textFill="#7b3f9f">
                <font>
                   <Font size="25.0" />
                </font>
@@ -24,14 +24,13 @@
                   <TableColumn fx:id="message" prefWidth="363.0" text="Message" />
                </columns>
             </TableView>
-            <Button fx:id="btnsupp" layoutX="547.0" layoutY="384.0" mnemonicParsing="false" onAction="#SupprimerReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Supprimer Reclamation" textFill="WHITE" />
+            <Button fx:id="btnsupp" layoutX="547.0" layoutY="384.0" mnemonicParsing="false" onAction="#SupprimerReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #7B3F9F; -fx-border-color: #ffffff;" text="Supprimer Reclamation" textFill="WHITE" />
             <TextField fx:id="search" layoutX="486.0" layoutY="29.0" onAction="#find" prefHeight="25.0" prefWidth="218.0" promptText="Rechercher..." />
-            <Button fx:id="btntraiter" layoutX="376.0" layoutY="384.0" mnemonicParsing="false" onAction="#TraiterReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #990000;" text="Traiter Reclamation" textFill="WHITE" />
+            <Button fx:id="btntraiter" layoutX="376.0" layoutY="384.0" mnemonicParsing="false" onAction="#TraiterReclamation" prefHeight="25.0" prefWidth="157.0" style="-fx-background-color: #7B3F9F; -fx-border-color: #ffffff;" text="Traiter Reclamation" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <Button fx:id="btnAjout" layoutX="21.0" layoutY="23.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #990000;" text="Ajouter Reclamation" textFill="WHITE" />
-      <Button fx:id="btnListe" layoutX="152.0" layoutY="23.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="203.0" style="-fx-background-color: #990000;" text="Liste des Reclamations non traitees" textFill="WHITE" />
-      <Button fx:id="btnstat" layoutX="552.0" layoutY="23.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #990000;" text="Statistique " textFill="WHITE" />
-      <Button fx:id="btnlistetraitees" layoutX="367.0" layoutY="23.0" mnemonicParsing="false" onAction="#ListerReclamationTratiees" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: #990000;" text="Liste des reclamations traitees" textFill="WHITE" />
+      <Button fx:id="btnListe" layoutX="152.0" layoutY="23.0" mnemonicParsing="false" onAction="#ListerReclamation" prefHeight="25.0" prefWidth="203.0" style="-fx-background-color: #7B3F9F; -fx-border-color: #ffffff;" text="Liste des Reclamations non traitees" textFill="WHITE" />
+      <Button fx:id="btnstat" layoutX="552.0" layoutY="23.0" mnemonicParsing="false" onAction="#AfficherStatReclamation" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #7B3F9F; -fx-border-color: #ffffff;" text="Statistique " textFill="WHITE" />
+      <Button fx:id="btnlistetraitees" layoutX="367.0" layoutY="23.0" mnemonicParsing="false" onAction="#ListerReclamationTratiees" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: #7B3F9F; -fx-border-color: #ffffff;" text="Liste des reclamations traitees" textFill="WHITE" />
       </children>
 </AnchorPane>

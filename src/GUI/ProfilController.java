@@ -54,6 +54,8 @@ public class ProfilController implements Initializable {
     private Button btnMyItems;
     @FXML
     private Button btnMyTrips;
+    @FXML
+    private Button btnSendReport;
 
     /**
      * Initializes the controller class.
@@ -193,6 +195,20 @@ public class ProfilController implements Initializable {
 
             Parent root = loader.load();
             FXMLController apc = loader.getController();
+            btnLogOut.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ProfilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void GoToSendReport(ActionEvent event) {
+          try {
+            FXMLLoader loader = new FXMLLoader(getClass()
+                    .getResource("ReclamationUI.fxml"));
+
+            Parent root = loader.load();
+            ReclamationUIController apc = loader.getController();
             btnLogOut.getScene().setRoot(root);
         } catch (IOException ex) {
             Logger.getLogger(ProfilController.class.getName()).log(Level.SEVERE, null, ex);
